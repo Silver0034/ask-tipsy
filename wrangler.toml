@@ -1,2 +1,7 @@
 name = "ask-tipsy"
 pages_build_output_dir = "./dist"
+
+compatibility_flags = [
+    "transformstream_enable_standard_constructor",
+    "streams_enable_constructors"
+]
