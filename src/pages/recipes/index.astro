@@ -1,12 +1,13 @@
 ---
+import BackgroundSpill from '../../components/svg/background-spill.astro'
 import Button from '../../components/Button.astro'
 import CardSlider from '../../components/CardSlider.astro'
+import Hero from '../../components/Hero.astro'
+import HeroImage from '../../assets/demo-hero.png'
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import RecipeTags from '../../components/RecipeTags.astro'
 import Section from '../../components/Section.astro'
 import SectionHeading from '../../components/SectionHeading.astro'
-
-import BackgroundSpill from '../../components/svg/background-spill.astro'
 import WaveSeparator from '../../components/svg/wave-separator.astro'
 
 import { getCollection } from 'astro:content'
@@ -18,7 +19,13 @@ categories = categories.filter((category) => category.slug !== 'new')
 ---
 
 <PrimaryLayout>
-	<Section id='hero'>
+	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
+		<h1>All Recipes</h1>
+		<p>
+			Discover delicious cocktail recipes that will elevate any occasion.
+		</p>
+	</Hero>
+	<Section>
 		<BackgroundSpill />
 		<h1>All Recipes</h1>
 		<p>

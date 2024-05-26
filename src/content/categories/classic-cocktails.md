@@ -3,6 +3,8 @@ title: 'Classic Cocktails'
 icon: 'fa-solid fa-martini-glass-citrus'
 featured: true
 description: 'Explore timeless classic cocktail recipes that bring sophistication and balance to every sip. Perfect for any occasion!'
+image: '/src/assets/demo-hero.png'
+imageAlt: 'The full Astro logo.'
 ---
 
 # Classic Cocktails

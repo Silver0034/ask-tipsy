@@ -3,6 +3,8 @@ title: 'Tiki'
 icon: 'fa-regular fa-sailboat'
 featured: true
 description: 'Celebrate the season with refreshing springtime drinks bursting with fresh, vibrant flavors. Perfect for sunny days!'
+image: '/src/assets/demo-hero.png'
+imageAlt: 'The full Astro logo.'
 ---
 
 # Tiki Drinks

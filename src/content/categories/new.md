@@ -3,6 +3,8 @@ title: 'New'
 icon: 'fa-solid fa-martini-glass-citrus'
 featured: true
 description: 'Be the first to try our latest drink recipes, featuring fresh and innovative flavors. Perfect for adventurous cocktail lovers!'
+image: '/src/assets/demo-hero.png'
+imageAlt: 'The full Astro logo.'
 ---
 
 # New Drinks

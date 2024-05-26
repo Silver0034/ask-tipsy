@@ -31,12 +31,15 @@ const recipesCollection = defineCollection({
 
 const categoriesCollection = defineCollection({
 	type: 'content',
-	schema: z.object({
-		title: z.string(),
-		icon: z.string(),
-		featured: z.boolean(),
-		description: z.string()
-	})
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			icon: z.string(),
+			featured: z.boolean(),
+			description: z.string(),
+			image: image(),
+			imageAlt: z.string()
+		})
 })
 
 // Export a single `collections` object to register your collection(s)

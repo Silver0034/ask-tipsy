@@ -1,11 +1,12 @@
 ---
 import { getCollection } from 'astro:content'
-import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
-import WaveSeparator from '../../components/svg/wave-separator.astro'
-import SectionHeading from '../../components/SectionHeading.astro'
-import CardSlider from '../../components/CardSlider.astro'
 import Button from '../../components/Button.astro'
+import CardSlider from '../../components/CardSlider.astro'
+import Hero from '../../components/Hero.astro'
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import Section from '../../components/Section.astro'
+import SectionHeading from '../../components/SectionHeading.astro'
+import WaveSeparator from '../../components/svg/wave-separator.astro'
 
 export async function getStaticPaths() {
 	const categories = await getCollection('categories')
@@ -27,6 +28,12 @@ recipes = recipes.filter((recipe) =>
 ---
 
 <PrimaryLayout frontmatter={entry.data}>
+	<Hero imageSrc={entry.data.image} imageAlt={entry.data.imageAlt}>
+		<p class='h1'>
+			{entry.data.title}
+		</p>
+		<p>{entry.data.description}</p>
+	</Hero>
 	<Section>
 		<Content />
 	</Section>

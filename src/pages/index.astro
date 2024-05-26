@@ -1,33 +1,31 @@
 ---
+import BackgroundSpill from '../components/svg/background-spill.astro'
 import Button from '../components/Button.astro'
 import CardSlider from '../components/CardSlider.astro'
+import Hero from '../components/Hero.astro'
+import HeroImage from '../assets/demo-hero.png'
 import PostSnippets from '../components/PostSnippets.astro'
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
+import RandomPour from '../components/svg/random-pour.astro'
 import RecipeTags from '../components/RecipeTags.astro'
 import Section from '../components/Section.astro'
 import SectionHeading from '../components/SectionHeading.astro'
-
-import BackgroundSpill from '../components/svg/background-spill.astro'
 import WaveSeparator from '../components/svg/wave-separator.astro'
-import RandomPour from '../components/svg/random-pour.astro'
-
-import Hero from '../components/Hero.astro'
-import HeroImage from '../assets/demo-hero.png'
 ---
 
 <PrimaryLayout>
 	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
 		<h1>Looking for Cocktail Recipes? Ask Tipsy!</h1>
 		<p>
-			<Button href='/categories/' icon='fa-solid fa-arrow-right'
+			<Button href='/recipes/' icon='fa-solid fa-arrow-right'
 				>View all categories</Button
 			>
 		</p>
 	</Hero>
-	<Section id='hero'>
+	<Section>
 		<BackgroundSpill />
 		<SectionHeading title='What would you like to enjoy today?' />
-		<p><a href='/categories/'>View all categories</a></p>
+		<p><a href='/recipes/'>View all categories</a></p>
 		<RecipeTags featured={true} />
 	</Section>
 	<Section id='new'>

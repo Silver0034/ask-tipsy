@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
+import Hero from '../../components/Hero.astro'
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import Section from '../../components/Section.astro'
-import { Picture } from 'astro:assets'
 
 export async function getStaticPaths() {
 	const recipeEntries = await getCollection('recipes')
@@ -23,22 +23,19 @@ const datePretty = new Date(entry.data.pubDate).toLocaleDateString('en-US', {
 ---
 
 <PrimaryLayout frontmatter={entry.data}>
+	<Hero imageSrc={entry.data.image} imageAlt={entry.data.imageAlt}>
+		<p class='h1'>
+			{entry.data.title}
+		</p>
+		<p>{entry.data.description}</p>
+	</Hero>
 	<Section>
-		<p>Published {datePretty}</p>
-		<p>
+		<p style='float: left;'>
 			<a href='/posts'
 				><i class='fa-solid fa-arrow-left'></i> Back to all posts</a
 			>
 		</p>
-	</Section>
-	<Section>
-		<Picture
-			src={entry.data.image}
-			alt={entry.data.imageAlt}
-			width='600'
-			widths={[600]}
-			formats={['avif', 'webp', 'jpg']}
-		/>
+		<p style='float: right;'>Published {datePretty}</p>
 	</Section>
 	<Section>
 		<Content />

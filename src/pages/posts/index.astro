@@ -1,17 +1,24 @@
 ---
+import BackgroundSpill from '../../components/svg/background-spill.astro'
 import Button from '../../components/Button.astro'
+import Hero from '../../components/Hero.astro'
+import HeroImage from '../../assets/demo-hero.png'
 import PostSnippets from '../../components/PostSnippets.astro'
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import Section from '../../components/Section.astro'
-
-import BackgroundSpill from '../../components/svg/background-spill.astro'
 import WaveSeparator from '../../components/svg/wave-separator.astro'
 ---
 
 <PrimaryLayout>
-	<Section id='hero'>
-		<BackgroundSpill />
+	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
 		<h1>Good Reads</h1>
+		<p>
+			Articles and entertaining stories to elevate your cocktail
+			experience.
+		</p>
+	</Hero>
+	<Section>
+		<BackgroundSpill />
 		<p>
 			Welcome to **Good Reads**! 📚✨ Here, you'll find a delightful
 			collection of articles that dive into the world of cocktails and
