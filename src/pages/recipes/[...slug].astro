@@ -22,6 +22,54 @@ const datePretty = new Date(entry.data.pubDate).toLocaleDateString('en-US', {
 })
 ---
 
+<style lang='scss' is:global>
+	@media (min-width: 768px) {
+		#content {
+			* {
+				grid-column: 2 / 6;
+			}
+
+			> #ingredients {
+				grid-column: 6 / 8;
+				justify-self: end;
+				position: sticky;
+				top: 1em;
+			}
+		}
+	}
+
+	#recipe-navigation {
+		grid-column: 2 / 8;
+		padding-block-end: 1em;
+	}
+
+	section#ingredients {
+		padding: 1em 2em;
+		background-color: var(--neutral-light);
+		border-radius: 0.5em;
+
+		table {
+			width: 100%;
+			border-block-start: 1px solid var(--theme-lighteralt);
+			padding-block-start: 0.25em;
+			td:last-child {
+				text-align: right;
+				font-size: var(--font-size-small);
+				font-weight: 700;
+			}
+		}
+
+		h2 {
+			font-size: var(--font-size-x-large);
+		}
+	}
+
+	section#instructions,
+	#recipe-navigation {
+		border-bottom: 1px solid var(--neutral-light);
+	}
+</style>
+
 <PrimaryLayout frontmatter={entry.data}>
 	<Hero imageSrc={entry.data.image} imageAlt={entry.data.imageAlt}>
 		<p class='h1'>
@@ -29,13 +77,38 @@ const datePretty = new Date(entry.data.pubDate).toLocaleDateString('en-US', {
 		</p>
 		<p>{entry.data.description}</p>
 	</Hero>
-	<Section>
+	<Section id='recipe-navigation'>
 		<p style='float: left;'>
-			<a href='/posts'
-				><i class='fa-solid fa-arrow-left'></i> Back to all posts</a
+			<a href='/recipes'
+				><i class='fa-solid fa-arrow-left'></i> Back to all recipes</a
 			>
 		</p>
 		<p style='float: right;'>Published {datePretty}</p>
+	</Section>
+	<Section id='ingredients'>
+		<p class='h4'>Ingredients</p>
+		<table>
+			{
+				entry.data.ingredients.map(
+					(ingredient: { name: string; quantity: string }) => (
+						<tr>
+							<td>{ingredient.name}</td>
+							<td>{ingredient.quantity}</td>
+						</tr>
+					)
+				)
+			}
+		</table>
+	</Section>
+	<Section id='instructions'>
+		<p class='h4'>Instructions</p>
+		<ol>
+			{
+				entry.data.instructions.map((instruction: string) => (
+					<li>{instruction}</li>
+				))
+			}
+		</ol>
 	</Section>
 	<Section>
 		<Content />

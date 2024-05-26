@@ -9,9 +9,13 @@ main {
 	* {
 		grid-column: 2 / -2;
 	}
+	grid-auto-flow: dense;
 
 	@media (min-width: 768px) {
-		grid-template-columns: auto repeat(6, 100px) auto;
+		grid-template-columns: minmax(2em, auto) repeat(6, minmax(100px, 200px)) minmax(
+				2em,
+				auto
+			);
 	}
 }
 

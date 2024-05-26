@@ -52,3 +52,30 @@ body {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
 }
+
+ol {
+	list-style-type: none;
+	counter-reset: li;
+
+	li {
+		position: relative;
+		padding-left: 2em;
+		counter-increment: li;
+		padding-bottom: 0.5em;
+
+		&:before {
+			content: counter(li);
+			position: absolute;
+			display: grid;
+			text-align: center;
+			top: 0em;
+			left: 0;
+			border-radius: 50%;
+			width: 1.5em;
+			height: 1.5em;
+			border: 2px solid var(--theme-primary);
+			font-weight: bold;
+			color: var(--theme-primary);
+		}
+	}
+}

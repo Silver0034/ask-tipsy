@@ -25,7 +25,14 @@ const recipesCollection = defineCollection({
 			author: z.string(),
 			image: image(),
 			imageAlt: z.string(),
-			tags: z.array(z.string())
+			tags: z.array(z.string()),
+			ingredients: z.array(
+				z.object({
+					name: z.string(),
+					quantity: z.string()
+				})
+			),
+			instructions: z.array(z.string())
 		})
 })
 
