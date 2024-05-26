@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content'
+
+const { featured } = Astro.props
+
+let categories = await getCollection('categories')
+
+if (featured) {
+	categories = categories.filter((category) => category.data.featured)
+}
+
+// Put new in front if it is in the list
+categories = categories.sort((a, b) => {
+	if (a.slug === 'new') {
+		return -1
+	}
+	if (b.slug === 'new') {
+		return 1
+	}
+	return 0
+})
+---
+
+<div class='tag-slider'>
+	<div class='tags'>
+		{
+			categories.map(({ slug, data }) => {
+				const { title, icon } = data
+				return (
+					<a href={`/categories/${slug}/`} class='tag'>
+						<i class={icon} />
+						{title}
+					</a>
+				)
+			})
+		}
+	</div>
+</div>
+
+<style lang='scss'>
+	.tag-slider {
+		overflow: auto;
+		padding-block-end: 1rem;
+		padding-block-start: 1rem;
+		margin-inline: -2rem;
+		padding-inline-start: 2rem;
+		-webkit-overflow-scrolling: touch;
+
+		.tags {
+			display: inline-flex;
+			white-space: nowrap;
+			gap: 1rem;
+
+			.tag {
+				display: flex;
+				gap: 0.5rem;
+				align-items: baseline;
+				padding: 0.5rem 0.75rem;
+				border-radius: 1rem;
+				border: 0.05rem solid var(--theme-primary);
+				border-color: var(--theme-primary);
+				color: var(--black);
+				text-decoration: none;
+				font-size: var(--font-size-small);
+				line-height: 1rem;
+				font-family: var(--font-family-subheading);
+				font-weight: 700;
+				text-transform: capitalize;
+
+				i {
+					color: var(--theme-primary);
+				}
+			}
+		}
+	}
+</style>

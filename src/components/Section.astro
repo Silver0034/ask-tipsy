@@ -1,0 +1,12 @@
+---
+const {id, classes} = Astro.props;
+---
+<section id={id} class={classes}>
+    <slot />
+</section>
+
+<style lang="scss">
+    section {
+        margin-block-start: 2rem;
+    }
+</style>

@@ -1,0 +1,102 @@
+---
+import Button from '../components/Button.astro'
+import CardSlider from '../components/CardSlider.astro'
+import PostSnippets from '../components/PostSnippets.astro'
+import PrimaryLayout from '../layouts/PrimaryLayout.astro'
+import RecipeTags from '../components/RecipeTags.astro'
+import Section from '../components/Section.astro'
+import SectionHeading from '../components/SectionHeading.astro'
+
+import BackgroundSpill from '../components/svg/background-spill.astro'
+import WaveSeparator from '../components/svg/wave-separator.astro'
+import RandomPour from '../components/svg/random-pour.astro'
+
+import Hero from '../components/Hero.astro'
+import HeroImage from '../assets/demo-hero.png'
+import TypographyDemo from '../components/TypographyDemo.astro'
+---
+
+<PrimaryLayout>
+	<Hero
+		text='Looking for a refreshing cocktail recipe?'
+		imageSrc={HeroImage}
+		imageAlt='A bar counter with various drinks'
+	/>
+	<Section id='hero'>
+		<BackgroundSpill />
+		<h1>What would you like to enjoy today?</h1>
+		<RecipeTags featured={true} />
+	</Section>
+	<Section id='new'>
+		<SectionHeading title='New Recipes' href='/categories/new/' />
+		<CardSlider tag='New' />
+	</Section>
+	<Section id='good-reads'>
+		<WaveSeparator />
+		<SectionHeading title='Good Reads' href='/posts/' />
+		<p>
+			Looking for something fun to read 📖? Explore our recent articles
+			about cocktails and hosting fun get-togethers! 🥳
+		</p>
+		<PostSnippets />
+	</Section>
+	<Section id='springtime-drinks'>
+		<SectionHeading
+			title='Springtime Drinks'
+			href='/categories/springtime-drinks/'
+		/>
+		<CardSlider tag='Springtime Drinks' />
+	</Section>
+	<Section id='random-pour'>
+		<RandomPour />
+		<SectionHeading title='Random Pour' />
+		<p>
+			Not quite sure what you want? Use the button below to try a random
+			cocktail recipe.
+		</p>
+		<p>
+			<Button href='/random' icon='fa-solid fa-arrow-right'
+				>Shake it up!</Button
+			>
+		</p>
+	</Section>
+	<Section id='about'>
+		<WaveSeparator />
+		<h2>Hi, I'm Tipsy</h2>
+		<p>
+			Hi there, I'm Tipsy, your friendly neighborhood cocktail enthusiast!
+			🍹 Whether you're a seasoned mixologist or just dipping your toes
+			into the wonderful world of cocktails, I'm here to be your guide
+			through all things boozy (and even some non-alcoholic concoctions!).
+		</p>
+		<p>
+			Picture this: a cozy gathering with friends, the clinking of
+			glasses, and the aroma of freshly mixed drinks in the air. That's my
+			idea of a perfect evening! I've always had a passion for crafting
+			delicious beverages and sharing them with those I hold dear. From
+			classic cocktails steeped in history to trendy libations making
+			waves in the mixology scene, I love exploring every sip-worthy
+			creation.
+		</p>
+		<p>
+			One of my favorite pastimes is delving into old cocktail recipes,
+			dusting off forgotten gems, and giving them a modern twist. But I'm
+			not just about the classics—I thrive on experimentation and
+			creativity, constantly dreaming up new flavor combinations to
+			tantalize your taste buds.
+		</p>
+		<p>
+			Here at <a href='/'>AskTipsy.com</a>, I'm thrilled to share my
+			passion for mixology with you. Whether you're looking for a
+			tried-and-true favorite or eager to embark on a flavor-filled
+			adventure, you'll find a treasure trove of recipes, tips, and tricks
+			to elevate your cocktail game. So grab a shaker, raise a glass, and
+			let's embark on a delicious journey together!
+		</p>
+		<p>
+			Cheers, <span style='font-family: var(--font-family-heading)'
+				>Tipsy</span
+			> 🥂
+		</p>
+	</Section>
+</PrimaryLayout>

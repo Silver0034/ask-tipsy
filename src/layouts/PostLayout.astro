@@ -1,0 +1,21 @@
+---
+const { title } = Astro.props.frontmatter || Astro.props
+
+import Head from '../components/Head.astro'
+import TypographyDemo from '../components/TypographyDemo.astro'
+import Header from '../components/Header.astro'
+import SectionHeading from '../components/SectionHeading.astro'
+import Card from '../components/Card.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<html lang='en'>
+	<Head />
+	<body>
+		<Header />
+		<main id='content'>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

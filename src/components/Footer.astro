@@ -1,0 +1,58 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer transition:persist>
+	<a class='font-heading logo' href='/'>AskTipsy</a>
+	<nav>
+		<a href='/recipes'>Recipes</a>
+		<a href='/posts'>Posts</a>
+	</nav>
+	<div class='copywrite'>
+		<p>&copy; {year}, All Rights Reserved.</p>
+		<p>
+			<a target='_blank' href='https://jlodes.com'>jlodes.com</a> |
+			<span class='font-heading'><a href='/'>AskTipsy</a></span>
+		</p>
+	</div>
+</footer>
+
+<style lang='scss'>
+	footer {
+		margin-block-start: auto;
+		grid-column: 1 / -1;
+		padding-block-start: 1rem;
+		text-align: center;
+		background: var(--theme-primary);
+
+		> * {
+			padding-inline: 2rem;
+		}
+
+		.logo {
+			font-size: var(--font-size-xxx-large);
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: var(--white);
+		}
+
+		.copywrite {
+			background-color: var(--black);
+			color: var(--white);
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding-block: 1rem;
+			margin-block-start: 1rem;
+
+			p {
+				margin: 0;
+				display: flex;
+				gap: 1em;
+			}
+		}
+	}
+</style>

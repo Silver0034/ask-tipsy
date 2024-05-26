@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content'
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
+import Section from '../../components/Section.astro'
+import { Picture } from 'astro:assets'
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts')
+	return posts.map((entry: any) => ({
+		params: { slug: entry.slug },
+		props: { entry }
+	}))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+
+const datePretty = new Date(entry.data.pubDate).toLocaleDateString('en-US', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric'
+})
+---
+
+<PrimaryLayout frontmatter={entry.data}>
+	<Section>
+		<p>Published {datePretty}</p>
+		<p>
+			<a href='/posts'
+				><i class='fa-solid fa-arrow-left'></i> Back to all posts</a
+			>
+		</p>
+	</Section>
+	<Section>
+		<Picture
+			src={entry.data.image}
+			alt={entry.data.imageAlt}
+			width='600'
+			widths={[600]}
+			formats={['avig', 'webp', 'jpeg']}
+		/>
+	</Section>
+	<Section>
+		<Content />
+	</Section>
+</PrimaryLayout>

@@ -1,0 +1,104 @@
+@use 'sass:math';
+@use 'sass:map';
+$scale: 1.2;
+$steps-down: 2;
+$steps-up: 5;
+$number-of-heading-types: 6;
+
+:root {
+	* {
+		line-height: 1.6em;
+	}
+
+	@for $i from ($steps-down * -1) through $steps-up {
+		$size: pow(1 * $scale, $i);
+		$label: 'font-size';
+
+		// Add x's if needed
+		@if $i > 1 or $i < -1 {
+			$label: $label + '-';
+			$distance-from-0: abs($i);
+			@for $x-counter from ($distance-from-0 - 2) through 0 {
+				$label: $label + 'x';
+			}
+		}
+		// Set size name
+		@if $i < 0 {
+			$label: $label + '-small';
+		}
+		@if $i == 0 {
+			$label: $label + '-base';
+		}
+		@if $i > 0 {
+			$label: $label + '-large';
+		}
+
+		// Create css variable
+		--#{$label}: #{$size}rem;
+
+		// Create css class for font size
+		.#{$label} {
+			font-size: var(--#{$label});
+		}
+
+		// Add heading font sizes if $i is within $number-of-heading-types from $steps-up
+		$distance-from-end: $steps-up - $i;
+		@if $distance-from-end < $number-of-heading-types {
+			$heading-number: $distance-from-end + 1;
+			h#{$heading-number},
+			.h#{$heading-number} {
+				font-size: var(--#{$label});
+			}
+		}
+
+		// Add small
+		@if $i == -1 {
+			small,
+			.small {
+				font-size: var(--#{$label});
+			}
+		}
+
+		// Add smaller
+		@if $i == -2 {
+			.smaller {
+				font-size: var(--#{$label});
+			}
+		}
+	}
+}
+
+h1,
+.h1,
+.font-heading {
+	font-family: var(--font-family-heading);
+	font-weight: 600;
+	margin-block: 0;
+}
+
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.font-subheading {
+	font-family: var(--font-family-subheading);
+	font-weight: 900;
+	font-style: italic;
+	margin-block: 0;
+}
+
+a {
+	font-weight: 400;
+}
+
+body,
+.font-body {
+	font-family: var(--font-family-body);
+	font-weight: 200;
+}

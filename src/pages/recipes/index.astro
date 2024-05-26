@@ -1,0 +1,56 @@
+---
+import Button from '../../components/Button.astro'
+import CardSlider from '../../components/CardSlider.astro'
+import PostSnippets from '../../components/PostSnippets.astro'
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
+import RecipeTags from '../../components/RecipeTags.astro'
+import Section from '../../components/Section.astro'
+import SectionHeading from '../../components/SectionHeading.astro'
+
+import BackgroundSpill from '../../components/svg/background-spill.astro'
+import WaveSeparator from '../../components/svg/wave-separator.astro'
+import RandomPour from '../../components/svg/random-pour.astro'
+
+import { getCollection } from 'astro:content'
+
+let categories = await getCollection('categories')
+let recipes = await getCollection('recipes')
+
+// remove the new category from the list
+categories = categories.filter((category) => category.slug !== 'new')
+---
+
+<PrimaryLayout>
+	<Section id='hero'>
+		<BackgroundSpill />
+		<h1>All Recipes</h1>
+		<p>
+			Get ready to shake, stir, and sip your way through an array of
+			tantalizing cocktail recipes! From timeless favorites to modern
+			marvels, our All Recipes page is your go-to destination for
+			discovering delicious libations that will elevate any occasion.
+		</p>
+		<h2>Top Categories</h2>
+		<RecipeTags featured={true} />
+	</Section>
+	{
+		categories.map((category) => {
+			return (
+				<Section id={category.slug} key={category.slug}>
+					<WaveSeparator />
+					<SectionHeading
+						title={category.data.title}
+						href={`/categories/${category.slug}/`}
+					/>
+					<p>{category.data.description}</p>
+					<CardSlider tag={category.data.title} />
+					<p>
+						<Button href={`/categories/${category.slug}`}>
+							View All {category.name}
+						</Button>
+					</p>
+				</Section>
+			)
+		})
+	}
+</PrimaryLayout>

@@ -1,0 +1,20 @@
+@use 'animations';
+@use 'reset';
+@use 'typography';
+@use 'colors';
+@use 'layout';
+@use './font-awesome-free/scss/fontawesome.scss';
+@use './font-awesome-free/scss/solid.scss';
+
+body {
+	*::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5em;
+		background-color: var(--neutral-lighteralt);
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: var(--neutral-quaternary);
+		border-radius: 1rem;
+	}
+}

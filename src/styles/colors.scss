@@ -1,0 +1,32 @@
+:root {
+	--theme-primary: #a11239;
+	--theme-lighteralt: #060102;
+	--theme-lighter: #1a0309;
+	--theme-light: #300511;
+	--theme-tertiary: #600b21;
+	--theme-secondary: #8d1031;
+	--theme-darkalt: #aa2246;
+	--theme-dark: #b73b5c;
+	--theme-darker: #ca6580;
+	--neutral-lighteralt: #f8f3f4;
+	--neutral-lighter: #f4eff0;
+	--neutral-light: #eae5e7;
+	--neutral-quaternaryalt: #dad6d7;
+	--neutral-quaternary: #d0cccd;
+	--neutral-tertiaryalt: #c8c4c5;
+	--neutral-tertiary: #140005;
+	--neutral-secondary: #1a0007;
+	--neutral-primaryalt: #210009;
+	--neutral-primary: #3b0010;
+	--neutral-dark: #2e000c;
+	--black: #34000e;
+	--white: #fffafb;
+
+	color: var(--black);
+	background-color: var(--white);
+}
+
+a,
+a:visited {
+	color: var(--theme-primary);
+}

@@ -1,0 +1,43 @@
+---
+
+---
+
+<header transition:persist>
+	<a class='font-heading logo swing-in-left-bck' href='/'>AskTipsy</a>
+	<nav>
+		<a class='font-subheading' href='/recipes/'>Recipes</a>
+	</nav>
+</header>
+
+<style lang='scss'>
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: 1rem;
+		height: min-content;
+
+		.logo {
+			font-size: var(--font-size-xxx-large);
+		}
+
+		nav {
+			display: flex;
+			gap: 1rem;
+
+			font-size: var(--font-size-large);
+		}
+
+		a {
+			text-decoration: none;
+			color: var(--black);
+
+			transition-duration: 0.25s;
+
+			&:hover,
+			&:focus {
+				transform: rotate(-2deg);
+			}
+		}
+	}
+</style>

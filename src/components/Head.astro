@@ -1,0 +1,16 @@
+---
+import GoogleFonts from './GoogleFonts.astro'
+import '../styles/main.scss'
+import { ViewTransitions } from 'astro:transitions'
+---
+
+<head>
+	<meta charset='utf-8' />
+	<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+	<meta name='viewport' content='width=device-width' />
+	<meta name='generator' content={Astro.generator} />
+	<GoogleFonts />
+	<title>Ask Tipsy</title>
+	<meta name='description' content='This is my website description.' />
+	<ViewTransitions />
+</head>

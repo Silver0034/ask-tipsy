@@ -1,0 +1,96 @@
+---
+import { Picture } from 'astro:assets'
+
+const { text, imageSrc, imageAlt } = Astro.props
+
+// If image source is set, image alt is required. If imageAlt is empty, throw and error.
+if (imageSrc && !imageAlt) {
+	throw new Error('Image alt is required when image source is set.')
+}
+---
+
+<style lang='scss'>
+	#hero {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		place-content: center;
+		text-align: center;
+		padding: 60px;
+		color: var(--color-text-inverse);
+		grid-column: 1 / -1;
+		height: 45vh;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: var(--color-canvas-quaternary);
+			z-index: -2;
+		}
+	}
+
+	.background {
+		position: absolute;
+		inset: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+		opacity: 0.7;
+		z-index: -1;
+	}
+</style>
+
+<section id='hero'>
+	{text && <h1>{text}</h1>}
+	<slot />
+	{
+		imageSrc && (
+			<Picture
+				class='background'
+				src={imageSrc}
+				alt={imageAlt}
+				formats={['webp', 'avif', 'jpeg']}
+				widths={[240, 540, 720, imageSrc.width]}
+				sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${imageSrc.width}px`}
+				loading='eager'
+			/>
+		)
+	}
+</section>
+
+<script>
+	let lastHeroScrollTime = 0
+	const heroScrollThrottleThreshold = 15 // in ms
+
+	function heroScroll() {
+		const parallax = document.querySelector(
+			'#hero .background'
+		) as HTMLElement | null
+
+		if (!parallax) return
+
+		// Stop when the element is not in the viewport
+		if (parallax.getBoundingClientRect().top > window.innerHeight) return
+
+		const timestamp = new Date().getTime()
+		// Stop if the scroll event is fired too frequently
+		if (timestamp - lastHeroScrollTime < heroScrollThrottleThreshold) return
+		lastHeroScrollTime = timestamp
+
+		let scrollPosition = window.scrollY
+
+		const position = scrollPosition * 0.25 + 'px'
+
+		parallax.style.objectPosition = '50% calc(50% + ' + position + ')'
+	}
+
+	function setHeroListener() {
+		window.removeEventListener('scroll', heroScroll)
+		window.addEventListener('scroll', heroScroll)
+	}
+	setHeroListener()
+	document.removeEventListener('astro:before-swap', setHeroListener)
+	document.addEventListener('astro:after-swap', setHeroListener)
+</script>

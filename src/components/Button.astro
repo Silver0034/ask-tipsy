@@ -1,0 +1,29 @@
+---
+const {text, href, icon} = Astro.props;
+---
+
+<a class="button" href={href}>
+<slot />
+{icon && <i class={icon}></i>}
+</a>
+
+<style lang="scss">
+    .button {
+        --text-color: var(--white);
+        --background-color: var(--theme-primary);
+        display: inline-flex;
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        text-decoration: none;
+        border-radius: 2rem;
+        transition: background-color 0.2s;
+        align-items: baseline;
+        border: 0.2rem solid var(--theme-primary);
+
+        &:hover, &:focus {
+            color: var(--text-color);
+        }
+    }
+</style>

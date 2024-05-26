@@ -1,0 +1,24 @@
+body,
+main {
+	padding: 0;
+	margin: 0;
+	display: grid;
+	--gap: 2rem;
+	grid-template-columns: var(--gap) repeat(6, 1fr) var(--gap);
+	grid-template-rows: repeat(2, min-content);
+	* {
+		grid-column: 2 / -2;
+	}
+
+	@media (min-width: 768px) {
+		grid-template-columns: auto repeat(6, 100px) auto;
+	}
+}
+
+main {
+	grid-column: 1 / -1;
+}
+
+main {
+	margin-block-end: 4rem;
+}

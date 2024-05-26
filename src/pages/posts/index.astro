@@ -1,0 +1,50 @@
+---
+import Button from '../../components/Button.astro'
+import CardSlider from '../../components/CardSlider.astro'
+import PostSnippets from '../../components/PostSnippets.astro'
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
+import RecipeTags from '../../components/RecipeTags.astro'
+import Section from '../../components/Section.astro'
+import SectionHeading from '../../components/SectionHeading.astro'
+
+import BackgroundSpill from '../../components/svg/background-spill.astro'
+import WaveSeparator from '../../components/svg/wave-separator.astro'
+import RandomPour from '../../components/svg/random-pour.astro'
+
+import { getCollection } from 'astro:content'
+
+let posts = await getCollection('posts')
+---
+
+<PrimaryLayout>
+	<Section id='hero'>
+		<BackgroundSpill />
+		<h1>Good Reads</h1>
+		<p>
+			Welcome to **Good Reads**! 📚✨ Here, you'll find a delightful
+			collection of articles that dive into the world of cocktails and
+			beyond. Whether you're looking to master mixology, discover new
+			trends, or simply enjoy some entertaining stories, our blog has
+			something for everyone. Sit back, relax, and explore our latest
+			posts, packed with tips, recipes, and inspiration to elevate your
+			cocktail experience. Happy reading!
+		</p>
+		<p>_Tipsy_ 🥂</p>
+	</Section>
+	<Section>
+		<h2>All Posts</h2>
+		<WaveSeparator />
+		<PostSnippets />
+	</Section>
+	<Section>
+		<h2>Explore More Recipes</h2>
+		<p>
+			Enjoyed these articles? Why not try your hand at mixing up some
+			delicious cocktails? Head over to our [Recipes](#) page and discover
+			a treasure trove of cocktail creations waiting to be made. From
+			classic concoctions to innovative new drinks, there's something for
+			every palate. Click the link below and let the mixing begin!
+		</p>
+		<p><Button href='/recipes'>Recipes</Button></p>
+	</Section>
+</PrimaryLayout>

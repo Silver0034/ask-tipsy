@@ -1,0 +1,21 @@
+---
+const {title, href, linkText} = Astro.props;
+---
+<div class="section-heading">
+    <h2>{title}</h2>
+    {href && <a href={href}>
+        {linkText || 'View all'}
+        </a>}
+</div>
+
+<style lang="scss">
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h2 {
+        margin-block: 0;
+    }
+}
+</style>

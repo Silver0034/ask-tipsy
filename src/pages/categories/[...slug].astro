@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content'
+import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
+import WaveSeparator from '../../components/svg/wave-separator.astro'
+import SectionHeading from '../../components/SectionHeading.astro'
+import CardSlider from '../../components/CardSlider.astro'
+import Button from '../../components/Button.astro'
+import Section from '../../components/Section.astro'
+
+export async function getStaticPaths() {
+	const categories = await getCollection('categories')
+	return categories.map((entry: any) => ({
+		params: { slug: entry.slug },
+		props: { entry }
+	}))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+
+let recipes = await getCollection('recipes')
+
+// Filter out any recipes that don't have this category's title in tags
+recipes = recipes.filter((recipe) =>
+	recipe.data.tags.includes(entry.data.title)
+)
+---
+
+<PrimaryLayout frontmatter={entry.data}>
+	<Section>
+		<Content />
+	</Section>
+	<Section>
+		<WaveSeparator />
+		<SectionHeading title={`All ${entry.data.title}`} />
+		<CardSlider tag={entry.data.title} />
+		<ul>
+			{
+				recipes.map((recipe) => (
+					<li>
+						<a href={`/recipes/${recipe.slug}`}>
+							{recipe.data.title}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</Section>
+	<Section>
+		<h2>Couldn't find the drink you were looking for?</h2>
+		<p>
+			Loved these drinks? There's so much more to discover! Head back to
+			our <a href='/recipes/'>Recipes</a> page and explore a world of delicious
+			beverages. From classic cocktails to innovative new creations, there's
+			something for every taste and occasion. Click the link below and continue
+			your cocktail adventure!
+		</p>
+		<p><Button href='/recipes/'>Explore Recipes</Button></p>
+	</Section>
+</PrimaryLayout>

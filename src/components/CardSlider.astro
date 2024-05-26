@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content'
+import Card from '../components/Card.astro'
+const { tag } = Astro.props
+let recipes = await getCollection('recipes')
+if (tag) {
+	recipes = recipes.filter((recipe) => recipe.data.tags.includes(tag))
+}
+
+// Sort all of the recipes by pubDate
+recipes.sort((a, b) => {
+	const aDate = new Date(a.data.pubDate).getTime()
+	const bDate = new Date(b.data.pubDate).getTime()
+	return bDate - aDate
+})
+---
+
+<div class='card-slider'>
+	<!-- TODO - Add a skip link -->
+	<div class='cards'>
+		{
+			recipes.map((recipe) => (
+				<Card
+					title={recipe.data.title}
+					image={recipe.data.image}
+					slug={`/recipes/${recipe.slug}/`}
+					imageAlt={recipe.data.imageAlt}
+				/>
+			))
+		}
+	</div>
+</div>
+
+<style lang='scss'>
+	.card-slider {
+		overflow: auto;
+		padding-block-end: 1rem;
+		padding-block-start: 1rem;
+		margin-inline: -2rem;
+		padding-inline-start: 2rem;
+		-webkit-overflow-scrolling: touch;
+
+		.cards {
+			display: inline-flex;
+			white-space: nowrap;
+			gap: 1rem;
+		}
+	}
+</style>
