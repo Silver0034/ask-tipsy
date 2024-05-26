@@ -3,7 +3,7 @@ title: 'Rum & Soda'
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
-image: '../../assets/recipes/rum-and-soda.png'
+image: '../../assets/recipes/rum-and-soda.jpg'
 imageAlt: 'The full Astro logo.'
 tags: ['New', 'astro', 'blogging', 'learning in public']
 ---
