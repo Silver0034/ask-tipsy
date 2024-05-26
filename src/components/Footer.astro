@@ -3,6 +3,19 @@ const year = new Date().getFullYear()
 ---
 
 <footer transition:persist>
+	<p>
+		We promote responsible drinking. Alcohol can be dangerous if not
+		consumed in moderation. Please only use the cocktail recipes on this
+		website or consume any alcoholic beverages if you are of legal drinking
+		age in your country or region. Remember to always drink responsibly and
+		never drink and drive.
+	</p>
+	<p>
+		If you or someone you know is struggling with alcohol abuse, please seek
+		help from a qualified professional or contact a local support
+		organization.
+	</p>
+	<br />
 	<a class='font-heading logo' href='/'>AskTipsy</a>
 	<nav>
 		<a href='/recipes'>Recipes</a>
@@ -23,6 +36,7 @@ const year = new Date().getFullYear()
 		grid-column: 1 / -1;
 		padding-block-start: 1rem;
 		text-align: center;
+		color: var(--white);
 		background: var(--theme-primary);
 
 		> * {
