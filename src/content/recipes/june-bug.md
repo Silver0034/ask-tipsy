@@ -3,7 +3,7 @@ title: 'June Bug'
 pubDate: 2023-05-23
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.jpg'
+image: '../../assets/recipes/june-bug.jpg'
 imageAlt: 'The full Astro logo.'
 tags: ['New', 'Tiki']
 ---

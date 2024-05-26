@@ -17,14 +17,25 @@ import TypographyDemo from '../components/TypographyDemo.astro'
 ---
 
 <PrimaryLayout>
-	<Hero
-		text='Looking for a refreshing cocktail recipe?'
-		imageSrc={HeroImage}
-		imageAlt='A bar counter with various drinks'
-	/>
+	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
+		<h1>Looking for Cocktail Recipes? Ask Tipsy!</h1>
+		<p>
+			<Button
+				text='New'
+				href='/categories/new/'
+				icon='fa-solid fa-martini-glass-citrus'
+			/>
+			<Button
+				text='Springtime Drinks'
+				href='/categories/spring/'
+				icon='fa-solid fa-seedling'
+			/>
+		</p>
+	</Hero>
 	<Section id='hero'>
 		<BackgroundSpill />
-		<h1>What would you like to enjoy today?</h1>
+		<SectionHeading title='What would you like to enjoy today?' />
+		<p><a href='/categories/'>View all categories</a></p>
 		<RecipeTags featured={true} />
 	</Section>
 	<Section id='new'>

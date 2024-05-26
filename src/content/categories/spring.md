@@ -1,6 +1,6 @@
 ---
 title: 'Springtime Drinks'
-icon: 'fa-solid fa-martini-glass-citrus'
+icon: 'fa-solid fa-seedling'
 featured: false
 description: 'Celebrate the season with refreshing springtime drinks bursting with fresh, vibrant flavors. Perfect for sunny days!'
 ---
