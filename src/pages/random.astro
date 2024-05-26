@@ -1,0 +1,20 @@
+---
+export const prerender = false
+
+import { getCollection } from 'astro:content'
+
+let recipes = await getCollection('recipes')
+
+// Select a random recipe
+let randomRecipe = recipes[Math.floor(Math.random() * recipes.length)]
+
+const url = `/recipes/${randomRecipe.slug}`
+
+return Astro.redirect(url)
+---
+
+<p>
+	Automatically redirecting... <a href={url}
+		>Click here to redirect manually.</a
+	>
+</p>

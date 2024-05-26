@@ -56,9 +56,13 @@
 			width: 150%;
 			outline: 1px solid yellow;
 			transform: translateY(100%);
+			-webkit-mask-image: url('../assets/liquid.svg');
 			mask-image: url('../assets/liquid.svg');
+			-webkit-mask-size: cover;
 			mask-size: cover;
+			-webkit-mask-position: left top;
 			mask-position: left top;
+			-webkit-mask-repeat: repeat-x;
 			mask-repeat: repeat-x;
 			background-color: var(--fill-color);
 			transition: transform var(--transition-duration) ease-in-out;
@@ -94,7 +98,8 @@
 		}
 	}
 
-	.button {
+	.button[class] {
+		// uses [class] to give more specificity than the astro component styles
 		--fill-color: var(--white);
 		&:hover,
 		&:focus {
