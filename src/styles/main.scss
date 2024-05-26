@@ -6,6 +6,16 @@
 @use './font-awesome-free/scss/fontawesome.scss';
 @use './font-awesome-free/scss/solid.scss';
 
+.screen-reader-only {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
 body {
 	*::-webkit-scrollbar {
 		width: 0.5rem;
@@ -17,4 +27,14 @@ body {
 		background-color: var(--neutral-quaternary);
 		border-radius: 1rem;
 	}
+}
+
+#search {
+	margin-block: 1em;
+}
+.pagefind-ui__drawer {
+	background: var(--white);
+	padding: 1rem;
+	border-radius: 0.5em;
+	margin-block: 1em;
 }

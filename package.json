@@ -1,21 +1,22 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^10.2.6",
-    "astro": "^4.5.9",
-    "typescript": "^5.4.3"
-  },
-  "devDependencies": {
-    "sass": "^1.72.0"
-  }
+	"name": "",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "wrangler types && astro dev",
+		"start": "wrangler types && astro dev",
+		"build": "wrangler types && astro check && astro build",
+		"preview": "wrangler types && astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.10",
+		"@astrojs/cloudflare": "^10.2.6",
+		"astro": "^4.5.9",
+		"astro-pagefind": "^1.5.0",
+		"typescript": "^5.4.3"
+	},
+	"devDependencies": {
+		"sass": "^1.72.0"
+	}
 }

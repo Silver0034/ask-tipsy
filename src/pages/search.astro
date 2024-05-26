@@ -1,0 +1,25 @@
+---
+export const prerender = false
+
+import BackgroundSpill from '../components/svg/background-spill.astro'
+import Hero from '../components/Hero.astro'
+import HeroImage from '../assets/demo-hero.png'
+import PrimaryLayout from '../layouts/PrimaryLayout.astro'
+import Search from 'astro-pagefind/components/Search'
+import Section from '../components/Section.astro'
+import SectionHeading from '../components/SectionHeading.astro'
+
+const q = Astro.url.searchParams.get('q') ?? undefined
+---
+
+<PrimaryLayout>
+	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
+		<h1>Search</h1>
+		<p>Find the drink you are looking for!</p>
+	</Hero>
+	<Section>
+		<BackgroundSpill />
+		<SectionHeading title='Find the cocktail you would like to enjoy' />
+		<Search query={q} uiOptions={{ showImages: false }} />
+	</Section>
+</PrimaryLayout>
