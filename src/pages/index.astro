@@ -11,6 +11,19 @@ import RecipeTags from '../components/RecipeTags.astro'
 import Section from '../components/Section.astro'
 import SectionHeading from '../components/SectionHeading.astro'
 import WaveSeparator from '../components/svg/wave-separator.astro'
+
+// Get the current season
+const currentMonth = new Date().getMonth() + 1
+let currentSeason = ''
+if (currentMonth >= 3 && currentMonth <= 4) {
+	currentSeason = 'spring'
+} else if (currentMonth >= 5 && currentMonth <= 8) {
+	currentSeason = 'summer'
+} else if (currentMonth >= 9 && currentMonth <= 10) {
+	currentSeason = 'fall'
+} else {
+	currentSeason = 'winter'
+}
 ---
 
 <PrimaryLayout>
@@ -30,7 +43,7 @@ import WaveSeparator from '../components/svg/wave-separator.astro'
 	</Section>
 	<Section id='new'>
 		<SectionHeading title='New Recipes' href='/categories/new/' />
-		<CardSlider tag='New' />
+		<CardSlider tag='new' />
 	</Section>
 	<Section id='good-reads'>
 		<WaveSeparator />
@@ -41,13 +54,50 @@ import WaveSeparator from '../components/svg/wave-separator.astro'
 		</p>
 		<PostSnippets />
 	</Section>
-	<Section id='springtime-drinks'>
-		<SectionHeading
-			title='Springtime Drinks'
-			href='/categories/springtime-drinks/'
-		/>
-		<CardSlider tag='Springtime Drinks' />
-	</Section>
+	{
+		currentSeason === 'winter' && (
+			<Section id='wintertime-drinks'>
+				<SectionHeading
+					title='Wintertime Drinks'
+					href='/categories/winter/'
+				/>
+				<CardSlider tag='winter' />
+			</Section>
+		)
+	}
+	{
+		currentSeason === 'spring' && (
+			<Section id='springtime-drinks'>
+				<SectionHeading
+					title='Springtime Drinks'
+					href='/categories/spring/'
+				/>
+				<CardSlider tag='spring' />
+			</Section>
+		)
+	}
+	{
+		currentSeason === 'summer' && (
+			<Section id='summertime-drinks'>
+				<SectionHeading
+					title='Summertime Drinks'
+					href='/categories/summer/'
+				/>
+				<CardSlider tag='summer' />
+			</Section>
+		)
+	}
+	{
+		currentSeason === 'fall' && (
+			<Section id='falltime-drinks'>
+				<SectionHeading
+					title='Falltime Drinks'
+					href='/categories/fall/'
+				/>
+				<CardSlider tag='fall' />
+			</Section>
+		)
+	}
 	<Section id='random-pour'>
 		<RandomPour />
 		<SectionHeading title='Random Pour' />

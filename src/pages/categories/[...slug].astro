@@ -40,7 +40,7 @@ recipes = recipes.filter((recipe) =>
 	<Section>
 		<WaveSeparator />
 		<SectionHeading title={`All ${entry.data.title}`} />
-		<CardSlider tag={entry.data.title} />
+		<CardSlider tag={entry.slug} />
 		<ul>
 			{
 				recipes.map((recipe) => (

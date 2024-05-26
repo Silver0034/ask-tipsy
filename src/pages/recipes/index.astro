@@ -42,12 +42,14 @@ categories = categories.filter((category) => category.slug !== 'new')
 			return (
 				<Section id={category.slug} key={category.slug}>
 					<WaveSeparator />
-					<SectionHeading
-						title={category.data.title}
-						href={`/categories/${category.slug}/`}
-					/>
+					<SectionHeading href={`/categories/${category.slug}/`}>
+						<h2>
+							<i class={category.data.icon} />
+							{category.data.title}
+						</h2>
+					</SectionHeading>
 					<p>{category.data.description}</p>
-					<CardSlider tag={category.data.title} />
+					<CardSlider tag={category.slug} />
 					<p>
 						<Button href={`/categories/${category.slug}`}>
 							View All {category.data.title}

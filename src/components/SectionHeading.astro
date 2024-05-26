@@ -3,7 +3,8 @@ const { title, href, linkText } = Astro.props
 ---
 
 <div class='section-heading'>
-	<h2>{title}</h2>
+	{title && <h2>{title}</h2>}
+	<slot />
 	{href && <a href={href}>{linkText || 'View all'}</a>}
 </div>
 

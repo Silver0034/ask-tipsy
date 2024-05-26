@@ -1,6 +1,6 @@
 ---
 title: 'Mocktails'
-icon: 'fa-regular fa-lemon'
+icon: 'fa-regular fa-glass-water'
 featured: true
 description: 'Enjoy delicious, alcohol-free mocktail recipes that offer all the fun and flavor without the buzz. Perfect for everyone!'
 image: '/src/assets/demo-hero.png'
