@@ -5,7 +5,7 @@ import BackgroundSpill from '../components/svg/background-spill.astro'
 import Hero from '../components/Hero.astro'
 import HeroImage from '../assets/demo-hero.png'
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
-import Search from 'astro-pagefind/components/Search'
+import AstroSearch from 'astro-pagefind/components/Search'
 import Section from '../components/Section.astro'
 import SectionHeading from '../components/SectionHeading.astro'
 
@@ -20,6 +20,6 @@ const q = Astro.url.searchParams.get('q') ?? undefined
 	<Section>
 		<BackgroundSpill />
 		<SectionHeading title='Find the cocktail you would like to enjoy' />
-		<Search query={q} uiOptions={{ showImages: false }} />
+		<AstroSearch query={q} uiOptions={{ showImages: false }} />
 	</Section>
 </PrimaryLayout>
