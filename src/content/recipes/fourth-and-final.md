@@ -3,7 +3,7 @@ title: 'Fourth & Final'
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.jpg'
+image: '../../assets/recipes/blackberry-bramble.png'
 imageAlt: 'The full Astro logo.'
 tags: ['Springtime Drinks', 'astro', 'blogging', 'learning in public']
 ---

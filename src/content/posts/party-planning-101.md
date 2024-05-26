@@ -3,7 +3,7 @@ title: 'Party Planning 101: Cocktail Soiree Tips!'
 pubDate: 2022-07-01
 description: 'Host the perfect cocktail party with expert planning advice.'
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.jpg'
+image: '/src/assets/recipes/blackberry-bramble.png'
 imageAlt: 'The full Astro logo.'
 tags: ['New', 'Springtime Drinks', 'astro', 'blogging', 'learning in public']
 ---

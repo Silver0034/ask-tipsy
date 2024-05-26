@@ -3,7 +3,7 @@ title: 'Master Mixology: Elevate Your Cocktails!'
 pubDate: 2022-07-01
 description: 'Insider tips to perfect your mixology skills at home.'
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.jpg'
+image: '/src/assets/recipes/blackberry-bramble.png'
 imageAlt: 'The full Astro logo.'
 tags: ['New', 'Springtime Drinks', 'astro', 'blogging', 'learning in public']
 ---

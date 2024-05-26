@@ -1,19 +1,11 @@
 ---
 import Button from '../../components/Button.astro'
-import CardSlider from '../../components/CardSlider.astro'
 import PostSnippets from '../../components/PostSnippets.astro'
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
-import RecipeTags from '../../components/RecipeTags.astro'
 import Section from '../../components/Section.astro'
-import SectionHeading from '../../components/SectionHeading.astro'
 
 import BackgroundSpill from '../../components/svg/background-spill.astro'
 import WaveSeparator from '../../components/svg/wave-separator.astro'
-import RandomPour from '../../components/svg/random-pour.astro'
-
-import { getCollection } from 'astro:content'
-
-let posts = await getCollection('posts')
 ---
 
 <PrimaryLayout>

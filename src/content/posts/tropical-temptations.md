@@ -3,7 +3,7 @@ title: 'Tropical Temptations Await!'
 pubDate: 2022-07-01
 description: 'Explore vibrant exotic cocktails for a taste of paradise.'
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.jpg'
+image: '/src/assets/recipes/blackberry-bramble.png'
 imageAlt: 'The full Astro logo.'
 tags: ['New', 'Springtime Drinks', 'astro', 'blogging', 'learning in public']
 ---
