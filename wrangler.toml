@@ -1,6 +1,8 @@
 name = "ask-tipsy"
 pages_build_output_dir = "./dist"
 
+# Set up constructors to allow Search to work
+compatibility_date = "2024-05-26"
 compatibility_flags = [
     "transformstream_enable_standard_constructor",
     "streams_enable_constructors"
