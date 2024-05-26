@@ -1,34 +1,39 @@
 ---
-import { getCollection } from 'astro:content';
-const {tag} = Astro.props;
-const allPosts = await getCollection('posts');
-const filteredRecipes = tag ? allPosts.filter(post => post.data.tags.includes(tag)) : allPosts;
+import { getCollection } from 'astro:content'
+const { tag } = Astro.props
+const allPosts = await getCollection('posts')
+const filteredRecipes = tag
+	? allPosts.filter((post) => post.data.tags.includes(tag))
+	: allPosts
+
+const skipLinkID = Math.random().toString(36).substring(2, 15)
 ---
 
-<ul class="post-snippets">
-    {
-        filteredRecipes.map((post) => (
-            <li>
-                <h3>
-                    <a class="font-subheading" href={`/posts/${post.slug}/`} >
-                        {post.data.title}
-                    </a>
-                </h3>
-                <p>{post.data.description}</p>
-            </li>
-        ))
-    }
+<a href={`#${skipLinkID}`} class='skip-link'>Skip posts list.</a>
+<ul class='post-snippets'>
+	{
+		filteredRecipes.map((post) => (
+			<li>
+				<h3>
+					<a class='font-subheading' href={`/posts/${post.slug}/`}>
+						{post.data.title}
+					</a>
+				</h3>
+				<p>{post.data.description}</p>
+			</li>
+		))
+	}
 </ul>
+<span id={skipLinkID}></span>
 
-<style lang="scss">
-    h3 {
-        font-size: var(--font-size--large);
-    }
-    a {
-        text-decoration: none;
-    }
-    p {
-        margin-top: 0;
-    }
+<style lang='scss'>
+	h3 {
+		font-size: var(--font-size--large);
+	}
+	a {
+		text-decoration: none;
+	}
+	p {
+		margin-top: 0;
+	}
 </style>
-

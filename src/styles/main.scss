@@ -38,3 +38,17 @@ body {
 	border-radius: 0.5em;
 	margin-block: 1em;
 }
+
+.skip-link {
+	position: fixed;
+	display: inline-block;
+	padding: 1em;
+	border: 1px solid var(--theme-primary);
+	top: 0.5em;
+	left: 0.5em;
+}
+
+.skip-link:not(:focus) {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}

@@ -7,6 +7,9 @@ if (tag) {
 	recipes = recipes.filter((recipe) => recipe.data.tags.includes(tag))
 }
 
+// Get a unique ID for the skip link
+const skipLinkID = Math.random().toString(36).substring(2, 15)
+
 // Sort all of the recipes by pubDate
 recipes.sort((a, b) => {
 	const aDate = new Date(a.data.pubDate).getTime()
@@ -16,7 +19,7 @@ recipes.sort((a, b) => {
 ---
 
 <div class='card-slider'>
-	<!-- TODO - Add a skip link -->
+	<a href={`#${skipLinkID}`} class='skip-link'>Skip recipes</a>
 	<div class='cards'>
 		{
 			recipes.map((recipe) => (
@@ -29,6 +32,7 @@ recipes.sort((a, b) => {
 			))
 		}
 	</div>
+	<span id={skipLinkID}></span>
 </div>
 
 <style lang='scss'>
