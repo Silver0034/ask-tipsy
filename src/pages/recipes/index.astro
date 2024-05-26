@@ -46,7 +46,7 @@ categories = categories.filter((category) => category.slug !== 'new')
 					<CardSlider tag={category.data.title} />
 					<p>
 						<Button href={`/categories/${category.slug}`}>
-							View All {category.name}
+							View All {category.data.title}
 						</Button>
 					</p>
 				</Section>
