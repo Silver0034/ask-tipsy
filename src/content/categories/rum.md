@@ -3,7 +3,7 @@ title: 'Rum Cocktails'
 icon: 'fa-regular fa-anchor'
 featured: false
 description: 'Sail away to tropical paradise with our collection of refreshing and flavorful rum cocktails, featuring the perfect blend of spirits, mixers, and tropical flavors!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/rum.jpg'
 imageAlt: 'A selection of colorful rum cocktails with tropical garnishes.'
 ---
 

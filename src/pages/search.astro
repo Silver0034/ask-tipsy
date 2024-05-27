@@ -3,7 +3,7 @@ export const prerender = false
 
 import BackgroundSpill from '../components/svg/background-spill.astro'
 import Hero from '../components/Hero.astro'
-import HeroImage from '../assets/demo-hero.png'
+import HeroImage from '../assets/search.jpg'
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import AstroSearch from 'astro-pagefind/components/Search'
 import Section from '../components/Section.astro'
@@ -13,7 +13,10 @@ const q = Astro.url.searchParams.get('q') ?? undefined
 ---
 
 <PrimaryLayout>
-	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
+	<Hero
+		imageSrc={HeroImage}
+		imageAlt='A bar counter with drinks and magnifying glasses'
+	>
 		<h1>Search</h1>
 		<p>Find the drink you are looking for!</p>
 	</Hero>

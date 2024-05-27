@@ -3,7 +3,7 @@ title: 'Daiquiris'
 icon: 'fa-regular fa-cocktail'
 featured: false
 description: 'Discover the refreshing world of Daiquiris, a perfect blend of rum, citrus, and sweetness for any occasion!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/daquiri.jpg'
 imageAlt: 'A classic daiquiri cocktail on a bar.'
 ---
 

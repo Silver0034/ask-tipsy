@@ -3,8 +3,8 @@ title: 'Mocktails'
 icon: 'fa-regular fa-glass-water'
 featured: true
 description: 'Enjoy delicious, alcohol-free mocktail recipes that offer all the fun and flavor without the buzz. Perfect for everyone!'
-image: '/src/assets/demo-hero.png'
-imageAlt: 'The full Astro logo.'
+image: '/src/assets/categories/mocktail.jpg'
+imageAlt: 'A colorful assortment of alcohol-free mocktails.'
 ---
 
 # Mocktails

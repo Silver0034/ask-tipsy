@@ -3,7 +3,7 @@ title: 'Fall Drinks'
 icon: 'fa-regular fa-leaf'
 featured: false
 description: 'Embrace the cozy flavors of autumn with our collection of warm and comforting drinks, perfect for sipping by the fire on a crisp fall evening!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/fall.jpg'
 imageAlt: 'A selection of cozy fall cocktails with cinnamon sticks and autumn leaves.'
 ---
 

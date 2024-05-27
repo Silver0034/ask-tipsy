@@ -3,7 +3,7 @@ title: 'Highballs'
 icon: 'fa-regular fa-glass-water'
 featured: false
 description: 'Elevate your drinking experience with classic and refreshing highballs, perfect for any occasion!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/highball.jpg'
 imageAlt: 'A refreshing highball cocktail on a bar.'
 ---
 

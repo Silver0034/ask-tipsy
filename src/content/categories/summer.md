@@ -3,7 +3,7 @@ title: 'Summertime Drinks'
 icon: 'fa-regular fa-sun'
 featured: true
 description: 'Cool off and embrace the summer vibes with our collection of refreshing and fruity drinks, perfect for lounging poolside or soaking up the sun!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/summer.jpg'
 imageAlt: 'A selection of colorful summertime cocktails with tropical garnishes.'
 ---
 

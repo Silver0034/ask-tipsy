@@ -3,7 +3,7 @@ title: 'Punches'
 icon: 'fa-regular fa-glass-whiskey'
 featured: false
 description: 'Experience the joy of communal drinking with vibrant and flavorful punches, perfect for sharing with friends and family!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/punches.jpg'
 imageAlt: 'A bowl of colorful punch with fruit slices.'
 ---
 

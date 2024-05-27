@@ -3,8 +3,8 @@ title: 'Springtime Drinks'
 icon: 'fa-solid fa-seedling'
 featured: false
 description: 'Celebrate the season with refreshing springtime drinks bursting with fresh, vibrant flavors. Perfect for sunny days!'
-image: '/src/assets/demo-hero.png'
-imageAlt: 'The full Astro logo.'
+image: '/src/assets/categories/spring.jpg'
+imageAlt: 'A selection of colorful springtime cocktails with floral garnishes.'
 ---
 
 # Springtime Drinks

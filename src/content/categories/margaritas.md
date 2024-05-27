@@ -3,7 +3,7 @@ title: 'Margaritas'
 icon: 'fa-regular fa-cocktail'
 featured: false
 description: 'Explore the zesty world of Margaritas, where tequila, citrus, and a touch of sweetness create the perfect balance!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/margarita.jpg'
 imageAlt: 'A classic margarita cocktail with salt rim.'
 ---
 

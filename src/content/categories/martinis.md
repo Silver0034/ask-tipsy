@@ -3,7 +3,7 @@ title: 'Martinis'
 icon: 'fa-regular fa-martini-glass'
 featured: false
 description: 'Step into the elegant world of Martinis, where gin or vodka meets vermouth for a timeless and sophisticated cocktail experience!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/martini.jpg'
 imageAlt: 'A classic martini cocktail with olives.'
 ---
 

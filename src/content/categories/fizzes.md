@@ -3,7 +3,7 @@ title: 'Fizzes'
 icon: 'fa-regular fa-cocktail'
 featured: false
 description: 'Discover the effervescent world of Fizzes, where bubbly mixes with spirits to create delightful and refreshing cocktails!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/fizzes.jpg'
 imageAlt: 'A classic fizz cocktail with bubbles.'
 ---
 

@@ -3,8 +3,8 @@ title: 'Hot Drinks'
 icon: 'fa-regular fa-mug-hot'
 featured: false
 description: 'Discover a warm and cozy collection of hot drinks, perfect for chilly days and festive gatherings. Comfort in every cup!'
-image: '/src/assets/demo-hero.png'
-imageAlt: 'The full Astro logo.'
+image: '/src/assets/categories/hot.jpg'
+imageAlt: 'An assortment of steaming hot drinks in mugs and glasses.'
 ---
 
 # Hot Drinks

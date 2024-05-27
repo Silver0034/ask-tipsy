@@ -3,7 +3,7 @@ title: 'Winter Drinks'
 icon: 'fa-regular fa-snowflake'
 featured: false
 description: 'Embrace the cozy and festive spirit of winter with our collection of warming and indulgent drinks, perfect for sipping by the fire on a chilly evening!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/winter.jpg'
 imageAlt: 'A selection of festive winter cocktails with cinnamon sticks and snowflakes.'
 ---
 

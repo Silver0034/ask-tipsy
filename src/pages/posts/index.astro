@@ -2,7 +2,7 @@
 import BackgroundSpill from '../../components/svg/background-spill.astro'
 import Button from '../../components/Button.astro'
 import Hero from '../../components/Hero.astro'
-import HeroImage from '../../assets/demo-hero.png'
+import HeroImage from '../../assets/posts.jpg'
 import PostSnippets from '../../components/PostSnippets.astro'
 import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import Section from '../../components/Section.astro'
@@ -10,7 +10,10 @@ import WaveSeparator from '../../components/svg/wave-separator.astro'
 ---
 
 <PrimaryLayout>
-	<Hero imageSrc={HeroImage} imageAlt='A bar counter with various drinks'>
+	<Hero
+		imageSrc={HeroImage}
+		imageAlt='A bar counter with various drinks and a paper that says "Posts"'
+	>
 		<h1>Good Reads</h1>
 		<p>
 			Articles and entertaining stories to elevate your cocktail

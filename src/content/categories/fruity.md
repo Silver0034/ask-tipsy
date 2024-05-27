@@ -3,7 +3,7 @@ title: 'Fruity Cocktails'
 icon: 'fa-regular fa-lemon'
 featured: true
 description: 'Indulge in the vibrant and refreshing flavors of fruity cocktails, bursting with the sweetness of fresh fruits and juices!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/fruity.jpg'
 imageAlt: 'A selection of colorful fruity cocktails with fruit garnishes.'
 ---
 

@@ -3,7 +3,7 @@ title: 'Old Fashioned Variants'
 icon: 'fa-regular fa-glass-whiskey'
 featured: false
 description: 'Explore innovative twists on the classic Old Fashioned cocktail, where bourbon or whiskey meets unique flavor combinations for a modern twist!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/old-fashioned.jpg'
 imageAlt: 'A selection of Old Fashioned cocktails with various garnishes.'
 ---
 

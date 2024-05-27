@@ -3,7 +3,7 @@ title: 'Sours'
 icon: 'fa-regular fa-lemon'
 featured: false
 description: 'Discover the perfect balance of sweet, sour, and spirit in our collection of classic and creative sour cocktails!'
-image: '/src/assets/demo-hero.png'
+image: '/src/assets/categories/sours.jpg'
 imageAlt: 'A classic whiskey sour cocktail with a lemon wedge.'
 ---
 
