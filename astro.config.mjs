@@ -19,5 +19,10 @@ export default defineConfig({
 	image: {
 		entrypoint: 'compile'
 	},
-	integrations: [pagefind()]
+	integrations: [pagefind()],
+	vite: {
+		define: {
+			__SITE_NAME__: JSON.stringify('Ask Tipsy')
+		}
+	}
 })

@@ -2,6 +2,36 @@
 import GoogleFonts from './GoogleFonts.astro'
 import '../styles/main.scss'
 import { ViewTransitions } from 'astro:transitions'
+
+const { title, description } = Astro.props
+
+if (!title) {
+	throw new Error('Head.astro: The title prop is required.')
+}
+
+const formattedTitle = title + ' | ' + __SITE_NAME__
+
+if (formattedTitle.length > 60) {
+	console.warn(
+		'Head.astro: The title should be fewer than 60 characters for SEO purposes.'
+	)
+}
+
+if (!description) {
+	console.warn('Head.astro: The description prop is required.')
+}
+
+if (description.length < 50) {
+	console.warn(
+		'Head.astro: The description should be at least 50 characters for SEO purposes.'
+	)
+}
+
+if (description.length > 160) {
+	console.warn(
+		'Head.astro: The description should be fewer than 160 characters for SEO purposes.'
+	)
+}
 ---
 
 <head>
@@ -10,8 +40,8 @@ import { ViewTransitions } from 'astro:transitions'
 	<meta name='viewport' content='width=device-width' />
 	<meta name='generator' content={Astro.generator} />
 	<GoogleFonts />
-	<title>Ask Tipsy</title>
-	<meta name='description' content='This is my website description.' />
+	<title>{formattedTitle}</title>
+	<meta name='description' content={description} />
 	<ViewTransitions />
 </head>
 
