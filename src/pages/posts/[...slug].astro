@@ -5,8 +5,8 @@ import PrimaryLayout from '../../layouts/PrimaryLayout.astro'
 import Section from '../../components/Section.astro'
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts')
-	return posts.map((entry: any) => ({
+	const articles = await getCollection('articles')
+	return articles.map((entry: any) => ({
 		params: { slug: entry.slug },
 		props: { entry }
 	}))
@@ -31,8 +31,8 @@ const datePretty = new Date(entry.data.pubDate).toLocaleDateString('en-US', {
 	</Hero>
 	<Section>
 		<p style='float: left;'>
-			<a href='/posts'
-				><i class='fa-solid fa-arrow-left'></i> Back to all posts</a
+			<a href='/articles'
+				><i class='fa-solid fa-arrow-left'></i> Back to all articles</a
 			>
 		</p>
 		<p style='float: right;'>Published {datePretty}</p>

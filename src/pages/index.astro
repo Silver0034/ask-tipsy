@@ -4,7 +4,7 @@ import Button from '../components/Button.astro'
 import CardSlider from '../components/CardSlider.astro'
 import Hero from '../components/Hero.astro'
 import HeroImage from '../assets/demo-hero.png'
-import PostSnippets from '../components/PostSnippets.astro'
+import ArticleSnippets from '../components/ArticleSnippets.astro'
 import PrimaryLayout from '../layouts/PrimaryLayout.astro'
 import RandomPour from '../components/svg/random-pour.astro'
 import RecipeTags from '../components/RecipeTags.astro'
@@ -47,12 +47,12 @@ if (currentMonth >= 3 && currentMonth <= 4) {
 	</Section>
 	<Section id='good-reads'>
 		<WaveSeparator />
-		<SectionHeading title='Good Reads' href='/posts/' />
+		<SectionHeading title='Good Reads' href='/articles/' />
 		<p>
 			Looking for something fun to read 📖? Explore our recent articles
 			about cocktails and hosting fun get-togethers! 🥳
 		</p>
-		<PostSnippets />
+		<ArticleSnippets />
 	</Section>
 	{
 		currentSeason === 'winter' && (
