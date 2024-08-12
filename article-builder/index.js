@@ -417,10 +417,6 @@ async function buildFile(url) {
 	const keyPhrase = await createFocusKeyPhrase(url)
 	console.log('    - Key Phrase: ' + keyPhrase)
 
-	// Get categories
-	const categories = await getCategoriesFromKeyPhrase(keyPhrase)
-	console.log('    - Categories: ' + JSON.stringify(categories))
-
 	// Create a title
 	const title = await createTitleFromKeyPhrase(keyPhrase)
 	console.log('    - Title: ' + title)
@@ -451,12 +447,17 @@ async function buildFile(url) {
 		conclusion
 	)
 
+	let categories = []
 	let recipes = []
 	let steps = []
 
 	if (type === 'recipes') {
-		recipes = await getRecipeIngredients(keyPhrase)
+		categories = await getCategoriesFromKeyPhrase(keyPhrase)
+		console.log('    - Categories: ' + JSON.stringify(categories))
+		ingredients = await getRecipeIngredients(keyPhrase)
+		console.log('    - Ingredients: ' + JSON.stringify(ingredients))
 		steps = await getRecipeSteps(keyPhrase, recipes)
+		console.log('    - Steps: ' + JSON.stringify(steps))
 	}
 
 	// Get the date in yyyy-mm-dd format
@@ -474,7 +475,7 @@ imageAlt: "${imageDescription.replace(/"/g, '\\"')}"
 
 	if (type === 'recipes') {
 		fileContent += `tags: ${JSON.stringify(categories)}
-ingredients: ${JSON.stringify(recipes)}
+ingredients: ${JSON.stringify(ingredients)}
 instructions: ${JSON.stringify(steps)}
 `
 	}
