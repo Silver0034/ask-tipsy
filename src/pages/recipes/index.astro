@@ -18,7 +18,10 @@ let categories = await getCollection('categories')
 categories = categories.filter((category) => category.slug !== 'new')
 ---
 
-<PrimaryLayout>
+<PrimaryLayout
+	title='Recipes'
+	description='Explore our list of cocktail recipes to find the perfect drink for any occasion.'
+>
 	<Hero
 		imageSrc={HeroImage}
 		imageAlt='A bar counter with various drinks and ingredients floating around'

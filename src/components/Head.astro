@@ -9,26 +9,28 @@ if (!title) {
 	throw new Error('Head.astro: The title prop is required.')
 }
 
+const titleEnding = ' | ' + __SITE_NAME__
+
 const formattedTitle = title + ' | ' + __SITE_NAME__
 
-if (formattedTitle.length > 60) {
-	console.warn(
-		'Head.astro: The title should be fewer than 60 characters for SEO purposes.'
+if (!formattedTitle || formattedTitle.length > 60) {
+	throw new Error(
+		`Head.astro: The title should be fewer than ${60 - titleEnding.length} characters for SEO purposes.`
 	)
 }
 
 if (!description) {
-	console.warn('Head.astro: The description prop is required.')
+	throw new Error('Head.astro: The description prop is required.')
 }
 
 if (description.length < 50) {
-	console.warn(
+	throw new Error(
 		'Head.astro: The description should be at least 50 characters for SEO purposes.'
 	)
 }
 
 if (description.length > 160) {
-	console.warn(
+	throw new Error(
 		'Head.astro: The description should be fewer than 160 characters for SEO purposes.'
 	)
 }

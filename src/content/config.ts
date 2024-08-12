@@ -10,8 +10,7 @@ const articlesCollection = defineCollection({
 			description: z.string(),
 			author: z.string(),
 			image: image(),
-			imageAlt: z.string(),
-			tags: z.array(z.string())
+			imageAlt: z.string()
 		})
 })
 

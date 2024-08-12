@@ -12,7 +12,7 @@ import SectionHeading from '../components/SectionHeading.astro'
 const q = Astro.url.searchParams.get('q') ?? undefined
 ---
 
-<PrimaryLayout>
+<PrimaryLayout title='Search' description='Find the perfect cocktail recipe.'>
 	<Hero
 		imageSrc={HeroImage}
 		imageAlt='A bar counter with drinks and magnifying glasses'

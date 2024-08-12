@@ -4,6 +4,8 @@ import { getCollection } from 'astro:content'
 
 let recipes = await getCollection('recipes')
 
+console.log(recipes)
+
 // Select a random recipe
 let randomRecipe = recipes[Math.floor(Math.random() * recipes.length)]
 
