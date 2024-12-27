@@ -1,4 +1,5 @@
 ---
+slug: 'rum-and-soda'
 title: 'Rum & Soda'
 pubDate: 2022-07-01
 description: 'Enjoy the classic and refreshing Rum and Soda, featuring white rum, lime juice, and club soda for a light and invigorating cocktail.
@@ -43,9 +44,9 @@ Rum and Soda pairs wonderfully with a variety of dishes. Its light and refreshin
 
 ### Tips for the Perfect Rum and Soda
 
--   **Quality Rum**: Use a good quality white rum to ensure a smooth and enjoyable drink.
--   **Fresh Lime Juice**: Freshly squeezed lime juice makes a big difference in the overall taste.
--   **Chill Everything**: Make sure all your ingredients are well-chilled before mixing to keep the drink refreshing.
+- **Quality Rum**: Use a good quality white rum to ensure a smooth and enjoyable drink.
+- **Fresh Lime Juice**: Freshly squeezed lime juice makes a big difference in the overall taste.
+- **Chill Everything**: Make sure all your ingredients are well-chilled before mixing to keep the drink refreshing.
 
 ### Get Creative
 

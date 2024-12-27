@@ -1,4 +1,5 @@
 ---
+slug: 'manhattan'
 title: 'Manhattan'
 pubDate: 2024-05-27
 description: 'Indulge in the sophistication of the Manhattan, a timeless cocktail that combines whiskey, sweet vermouth, and bitters for a perfectly balanced taste.'
@@ -42,9 +43,9 @@ The Manhattan pairs beautifully with savory and rich dishes. Try it with steak, 
 
 ### Tips for the Perfect Manhattan
 
--   **Choose Your Whiskey**: Use a good quality rye or bourbon whiskey to achieve the best flavor.
--   **Chill Properly**: Stirring the cocktail with ice ensures it's well-chilled without becoming diluted.
--   **Classic Garnish**: A maraschino cherry or a twist of orange peel adds a traditional touch.
+- **Choose Your Whiskey**: Use a good quality rye or bourbon whiskey to achieve the best flavor.
+- **Chill Properly**: Stirring the cocktail with ice ensures it's well-chilled without becoming diluted.
+- **Classic Garnish**: A maraschino cherry or a twist of orange peel adds a traditional touch.
 
 ### Get Creative
 

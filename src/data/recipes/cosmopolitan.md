@@ -1,9 +1,10 @@
 ---
+slug: 'cosmopolitan'
 title: 'Cosmopolitan'
 pubDate: 2024-05-27
-description: 'Savor the elegance of the Cosmopolitan, a timeless cocktail blending vodka, cranberry juice, triple sec, and lime juice for a sophisticated sip.'
+description: 'This elegant drink is a perfect blend of vodka, cranberry juice, triple sec, and fresh lime juice.'
 author: 'Tipsy'
-image: '../../assets/recipes/cosmopolitan.jpg'
+image: '@assets/recipes/cosmopolitan.png'
 imageAlt: 'A vibrant Cosmopolitan cocktail garnished with a lime twist.'
 tags: ['martinis', 'vodka', 'classic']
 ingredients:
@@ -43,9 +44,9 @@ The Cosmopolitan pairs excellently with a variety of dishes. Try it with seafood
 
 ### Tips for the Perfect Cosmopolitan
 
--   **Use Quality Vodka**: Opt for a premium vodka for the best flavor.
--   **Fresh Lime Juice**: Freshly squeezed lime juice makes a big difference in taste.
--   **Chill Your Glass**: A chilled martini glass enhances the drinking experience and keeps your cocktail cold longer.
+- **Use Quality Vodka**: Opt for a premium vodka for the best flavor.
+- **Fresh Lime Juice**: Freshly squeezed lime juice makes a big difference in taste.
+- **Chill Your Glass**: A chilled martini glass enhances the drinking experience and keeps your cocktail cold longer.
 
 ### Get Creative
 

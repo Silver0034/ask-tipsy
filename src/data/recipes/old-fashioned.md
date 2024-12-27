@@ -1,4 +1,5 @@
 ---
+slug: 'old-fashioned'
 title: 'Old Fashioned'
 pubDate: 2024-05-27
 description: 'Step back in time and savor the classic elegance of the Old Fashioned, a timeless cocktail that blends bourbon, sugar, bitters, and a hint of citrus for a rich and flavorful experience.'
@@ -44,9 +45,9 @@ The Old Fashioned pairs beautifully with savory and hearty dishes. Try it with s
 
 ### Tips for the Perfect Old Fashioned
 
--   **Quality Bourbon**: Use a high-quality bourbon with rich and complex flavors.
--   **Proper Muddling**: Take your time when muddling the sugar and bitters to ensure they're properly combined.
--   **Garnish with Care**: The orange twist and cherry not only add flavor but also enhance the cocktail's visual appeal.
+- **Quality Bourbon**: Use a high-quality bourbon with rich and complex flavors.
+- **Proper Muddling**: Take your time when muddling the sugar and bitters to ensure they're properly combined.
+- **Garnish with Care**: The orange twist and cherry not only add flavor but also enhance the cocktail's visual appeal.
 
 ### Get Creative
 

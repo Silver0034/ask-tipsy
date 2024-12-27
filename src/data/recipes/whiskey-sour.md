@@ -1,4 +1,5 @@
 ---
+slug: 'whiskey-sour'
 title: 'Whiskey Sour'
 pubDate: 2024-05-27
 description: 'Indulge in the timeless charm of the Whiskey Sour, a classic cocktail that combines whiskey, fresh lemon juice, and simple syrup for a perfect balance of sweet and sour.'
@@ -42,9 +43,9 @@ The Whiskey Sour pairs perfectly with hearty and savory dishes. Try it with barb
 
 ### Tips for the Perfect Whiskey Sour
 
--   **Quality Ingredients**: Use high-quality whiskey and freshly squeezed lemon juice for the best flavor.
--   **Proper Shaking**: Shake the cocktail well with ice to ensure it's properly chilled and diluted.
--   **Garnish with Care**: A lemon twist and a cherry add a touch of elegance to your Whiskey Sour.
+- **Quality Ingredients**: Use high-quality whiskey and freshly squeezed lemon juice for the best flavor.
+- **Proper Shaking**: Shake the cocktail well with ice to ensure it's properly chilled and diluted.
+- **Garnish with Care**: A lemon twist and a cherry add a touch of elegance to your Whiskey Sour.
 
 ### Get Creative
 

@@ -1,4 +1,5 @@
 ---
+slug: 'negroni'
 title: 'Negroni'
 pubDate: 2024-05-27
 description: 'Savor the bold and balanced flavors of the Negroni, a classic Italian cocktail that combines gin, Campari, and sweet vermouth for a perfect aperitif.'
@@ -43,9 +44,9 @@ The Negroni pairs beautifully with savory and rich dishes. Try it with charcuter
 
 ### Tips for the Perfect Negroni
 
--   **Quality Ingredients**: Use high-quality gin, Campari, and sweet vermouth for the best flavor.
--   **Proper Stirring**: Stir the cocktail well to ensure it's properly chilled and diluted.
--   **Classic Garnish**: An orange twist adds a traditional touch and enhances the cocktail's aromatic profile.
+- **Quality Ingredients**: Use high-quality gin, Campari, and sweet vermouth for the best flavor.
+- **Proper Stirring**: Stir the cocktail well to ensure it's properly chilled and diluted.
+- **Classic Garnish**: An orange twist adds a traditional touch and enhances the cocktail's aromatic profile.
 
 ### Get Creative
 

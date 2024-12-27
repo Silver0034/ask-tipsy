@@ -1,4 +1,5 @@
 ---
+slug: 'daiquiri'
 title: 'Daiquiri'
 pubDate: 2024-05-27
 description: 'Enjoy the classic elegance of the Daiquiri, a refreshing cocktail that combines rum, fresh lime juice, and simple syrup for a timeless taste.'
@@ -42,9 +43,9 @@ The Daiquiri pairs wonderfully with light and fresh dishes. Try it with seafood,
 
 ### Tips for the Perfect Daiquiri
 
--   **Quality Rum**: Use a good quality white rum for the best flavor.
--   **Fresh Lime Juice**: Freshly squeezed lime juice is essential for the authentic taste of a Daiquiri.
--   **Proper Chilling**: Make sure to shake the cocktail well with ice to achieve the perfect chill.
+- **Quality Rum**: Use a good quality white rum for the best flavor.
+- **Fresh Lime Juice**: Freshly squeezed lime juice is essential for the authentic taste of a Daiquiri.
+- **Proper Chilling**: Make sure to shake the cocktail well with ice to achieve the perfect chill.
 
 ### Get Creative
 

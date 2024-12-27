@@ -1,4 +1,5 @@
 ---
+slug: 'margarita'
 title: 'Margarita'
 pubDate: 2024-05-27
 description: 'Savor the vibrant taste of the Margarita, a classic cocktail that blends tequila, lime juice, and triple sec for a refreshing and zesty experience.'
@@ -44,9 +45,9 @@ The Margarita pairs wonderfully with Mexican cuisine and spicy dishes. Try it wi
 
 ### Tips for the Perfect Margarita
 
--   **Quality Tequila**: Use a good quality tequila, preferably 100% agave, for the best flavor.
--   **Fresh Lime Juice**: Freshly squeezed lime juice is essential for an authentic Margarita.
--   **Salted Rim**: A salted rim enhances the overall flavor and adds a traditional touch.
+- **Quality Tequila**: Use a good quality tequila, preferably 100% agave, for the best flavor.
+- **Fresh Lime Juice**: Freshly squeezed lime juice is essential for an authentic Margarita.
+- **Salted Rim**: A salted rim enhances the overall flavor and adds a traditional touch.
 
 ### Get Creative
 

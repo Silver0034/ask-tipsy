@@ -1,0 +1,87 @@
+@use '@styles/breakpoints' as *;
+
+@mixin heading($size: 400) {
+	@if $size < 100 or $size > 900 {
+		@error "Invalid size: #{$size}. Size must be between 100 and 900.";
+	}
+
+	$font-size: 1rem;
+	@if $size < 800 {
+		$font-size: 1.625rem;
+	} @else if $size < 900 {
+		$font-size: 2.625rem;
+	} @else {
+		$font-size: 4.25rem;
+	}
+
+	$small-font-size: 1rem;
+	@if $size < 800 {
+		$small-font-size: 1rem;
+	} @else if $size < 900 {
+		$small-font-size: 1.625rem;
+	} @else {
+		$small-font-size: 2.625rem;
+	}
+
+	font-size: $font-size;
+	line-height: $font-size * 1.25;
+	font-weight: 700;
+	font-family: 'Truculenta', 'Truculenta Fallback: Arial',
+		'Truculenta Fallback: Roboto', 'sans-serif';
+
+	@include breakpoint('small') {
+		font-size: $small-font-size;
+	}
+}
+
+@mixin body($size: 400) {
+	@if $size < 100 or $size > 900 {
+		@error "Invalid size: #{$size}. Size must be between 100 and 900.";
+	}
+
+	$font-size: 1rem;
+	@if $size < 300 {
+		$font-size: 0.688rem;
+	} @else if $size < 400 {
+		$font-size: 0.812rem;
+	} @else if $size < 500 {
+		$font-size: $font-size;
+	} @else if $size < 600 {
+		$font-size: 1.188rem;
+	} @else if $size < 700 {
+		$font-size: 1.438rem;
+	} @else if $size < 800 {
+		$font-size: 1.75rem;
+	} @else if $size < 900 {
+		$font-size: 2.062rem;
+	} @else {
+		$font-size: 2.5rem;
+	}
+
+	$small-font-size: 1rem;
+	@if $size < 300 {
+		$small-font-size: 0.688rem;
+	} @else if $size < 400 {
+		$small-font-size: 0.812rem;
+	} @else if $size < 600 {
+		$small-font-size: $font-size;
+	} @else if $size < 700 {
+		$small-font-size: 1.188rem;
+	} @else if $size < 800 {
+		$small-font-size: 1.438rem;
+	} @else if $size < 900 {
+		$small-font-size: 1.75rem;
+	} @else {
+		$small-font-size: 1.75rem;
+	}
+
+	font-size: $font-size;
+	line-height: $font-size * 1.25;
+	font-weight: 400;
+	font-family: 'Kreon', 'Kreon Fallback: Arial', 'Kreon Fallback: Roboto',
+		'sans-serif';
+
+	@include breakpoint('small') {
+		font-size: $small-font-size;
+	}
+}

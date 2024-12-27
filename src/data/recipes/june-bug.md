@@ -1,4 +1,5 @@
 ---
+slug: 'june-bug'
 title: 'June Bug'
 pubDate: 2023-05-23
 description: 'Experience the tropical delight of the June Bug cocktail, combining pineapple juice, melon liqueur, banana liqueur, coconut rum, and lemon juice for a refreshing escape.
@@ -44,9 +45,9 @@ The June Bug pairs wonderfully with tropical or light fare. Try serving it along
 
 ### Tips for the Perfect June Bug
 
--   **Fresh Ingredients**: For the best flavor, use fresh pineapple and lemon juice.
--   **Chill Properly**: Ensure your cocktail is well-chilled by shaking it thoroughly with ice.
--   **Creative Garnishes**: Don't be afraid to get creative with your garnishes. A slice of pineapple, a cherry, or a paper umbrella can add a festive touch.
+- **Fresh Ingredients**: For the best flavor, use fresh pineapple and lemon juice.
+- **Chill Properly**: Ensure your cocktail is well-chilled by shaking it thoroughly with ice.
+- **Creative Garnishes**: Don't be afraid to get creative with your garnishes. A slice of pineapple, a cherry, or a paper umbrella can add a festive touch.
 
 ### Get Creative
 

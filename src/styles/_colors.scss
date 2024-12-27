@@ -18,8 +18,13 @@
 }
 
 $color-parts: (
-	background: setParts(0, 0%, 100%),
-	text: setParts(240, 15%, 15%)
+	background: setParts(43, 100%, 99%),
+	text: setParts(45, 10%, 8%),
+	primary: setParts(344, 100%, 29%),
+	secondary: setParts(14, 56%, 45%),
+	secondary-100: setParts(10, 80%, 71%),
+	tertiary: setParts(24, 79%, 77%),
+	accent: setParts(210, 58%, 79%)
 );
 
 $colors: ();

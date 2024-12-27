@@ -38,23 +38,24 @@ const postsCollection = defineCollection({
 })
 
 const recipesCollection = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: 'src/data/recipes/*.md' }),
 	schema: ({ image }) =>
 		z.object({
-			title: z.string(),
-			pubDate: z.date(),
-			description: z.string(),
 			author: z.string(),
+			description: z.string(),
+			homeFeatured: z.boolean().optional(),
 			image: image(),
 			imageAlt: z.string(),
-			tags: z.array(z.string()),
 			ingredients: z.array(
 				z.object({
 					name: z.string(),
 					quantity: z.string()
 				})
 			),
-			instructions: z.array(z.string())
+			instructions: z.array(z.string()),
+			pubDate: z.date(),
+			tags: z.array(z.string()),
+			title: z.string()
 		})
 })
 

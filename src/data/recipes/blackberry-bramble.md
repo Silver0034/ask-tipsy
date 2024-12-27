@@ -1,10 +1,12 @@
 ---
+slug: 'blackberry-bramble'
 title: 'Blackberry Bramble'
 pubDate: 2022-07-01
 description: 'Discover the Blackberry Bramble, a refreshing cocktail blending gin, fresh blackberries, lemon juice, and simple syrup for a perfect balance of tart and sweet.
 '
 author: 'Astro Learner'
-image: '../../assets/recipes/blackberry-bramble.png'
+homeFeatured: true
+image: '@assets/recipes/blackberry-bramble.png'
 imageAlt: 'The full Astro logo.'
 tags: ['new', 'spring', 'summer', 'classic', 'fruity']
 ingredients:
@@ -43,9 +45,9 @@ This cocktail pairs wonderfully with light appetizers and fresh salads. Try serv
 
 ### Tips for the Perfect Blackberry Bramble
 
--   **Use Fresh Ingredients**: Fresh blackberries and freshly squeezed lemon juice make a significant difference in the taste.
--   **Proper Muddling**: When muddling the blackberries, press firmly but gently to release the juices without breaking the seeds, which can add bitterness.
--   **Chill Your Glass**: For an extra refreshing experience, chill your rocks glass before straining the cocktail into it.
+- **Use Fresh Ingredients**: Fresh blackberries and freshly squeezed lemon juice make a significant difference in the taste.
+- **Proper Muddling**: When muddling the blackberries, press firmly but gently to release the juices without breaking the seeds, which can add bitterness.
+- **Chill Your Glass**: For an extra refreshing experience, chill your rocks glass before straining the cocktail into it.
 
 ### Get Creative
 

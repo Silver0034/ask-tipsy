@@ -2,6 +2,10 @@
 // Imports & components
 import { Icon } from 'astro-icon/components'
 import Layout from '@layouts/LayoutPage.astro'
+import HeroFeaturedRecipe from '@components/HeroFeaturedRecipe.astro'
+import { getEntry } from 'astro:content'
+
+const featuredRecipe = await getEntry('recipes', 'cosmopolitan')
 
 // Page title for SEO / Featured Image / Meta Tags
 export const title = 'The Home Page from my Astro Template'
@@ -22,10 +26,10 @@ const tabTitle = 'Home Page',
 	title={title}
 	tabTitle={tabTitle}
 >
-	<Icon name='logo' />
+	<HeroFeaturedRecipe recipe={featuredRecipe} subtitle='Ring in 2025!' />
 
-	<h1>
+	<!-- <h1>
 		Hello World
 		<Icon name='fa6-solid:check' />
-	</h1>
+	</h1> -->
 </Layout>

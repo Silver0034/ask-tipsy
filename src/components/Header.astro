@@ -1,7 +1,37 @@
 ---
-
+const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 ---
 
+<style>
+	header {
+		position: sticky;
+		display: grid;
+		grid-template-columns: subgrid;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: var(--header-height);
+		margin-block-end: calc(var(--header-height) * -1);
+		color: var(--color-background);
+		align-content: center;
+	}
+	.content {
+		grid-column: 2 / -2;
+	}
+	.word {
+		display: inline-block;
+		transform: rotate(1deg);
+		line-height: 1.5em;
+	}
+	.word:nth-child(even) {
+		transform: translateY(-0.15em) rotate(-4deg);
+	}
+</style>
+
 <header>
-	<h2>Header</h2>
+	<div class='content'>
+		<a class='h2' href='/' aria-label='Home'>
+			{words.map((word) => <span class='word drop-shadow'>{word}</span>)}
+		</a>
+	</div>
 </header>

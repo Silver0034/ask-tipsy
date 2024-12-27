@@ -1,4 +1,5 @@
 ---
+slug: 'martini'
 title: 'Martini'
 pubDate: 2024-05-27
 description: 'Experience the sophistication of the Martini, a timeless cocktail that blends gin and dry vermouth for a crisp and elegant taste.'
@@ -42,9 +43,9 @@ The Martini pairs beautifully with a variety of hors d'oeuvres and sophisticated
 
 ### Tips for the Perfect Martini
 
--   **Quality Gin**: Use a high-quality gin to achieve the best flavor.
--   **Chill Properly**: Stirring the cocktail with ice ensures it's well-chilled without becoming diluted.
--   **Classic Garnish**: An olive or a twist of lemon peel adds a traditional touch to your Martini.
+- **Quality Gin**: Use a high-quality gin to achieve the best flavor.
+- **Chill Properly**: Stirring the cocktail with ice ensures it's well-chilled without becoming diluted.
+- **Classic Garnish**: An olive or a twist of lemon peel adds a traditional touch to your Martini.
 
 ### Get Creative
 

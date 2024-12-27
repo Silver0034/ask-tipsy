@@ -29,13 +29,13 @@ if (target === '_blank') {
 	style={style}
 	title={title}
 >
-	{icon && <Icon name={icon} width='1.5em' height='1.5em' />}
 	<span class='button__text'>{text}</span>
 	{
 		target === '_blank' && (
 			<span class='screen-reader-text'>(Opens in a new tab)</span>
 		)
 	}
+	{icon && <Icon name={icon} width='1.5em' height='1.5em' />}
 </Tag>
 
 <style lang='scss'>

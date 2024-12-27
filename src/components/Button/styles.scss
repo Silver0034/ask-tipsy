@@ -7,7 +7,7 @@ $variants: map.keys($colors);
 $variants: list.append($variants, 'current');
 
 .button {
-	--btn-color: var(--color-text);
+	--btn-color: inherit;
 	--btn-color-border: var(--color-text);
 	--btn-color-background: transparent;
 	--btn-color-hover: var(--color-text);
@@ -22,14 +22,15 @@ $variants: list.append($variants, 'current');
 	}
 
 	@each $variant in $variants {
+		&.fill-#{$variant} {
+			--btn-color: var(--color-text);
+			--btn-color-border: var(--color-#{$variant});
+			--btn-color-background: var(--color-#{$variant});
+		}
+
 		&.#{$variant} {
 			--btn-color: var(--color-#{$variant});
 			--btn-color-border: var(--color-#{$variant});
-		}
-
-		&.fill-#{$variant} {
-			--btn-color-border: var(--color-#{$variant});
-			--btn-color-background: var(--color-#{$variant});
 		}
 	}
 
@@ -40,6 +41,27 @@ $variants: list.append($variants, 'current');
 	&.fill-tertiary {
 		--btn-color-border-hover: var(--color-primary);
 		--btn-color-background-hover: var(--color-primary);
+	}
+
+	&.icon-only {
+		border: none;
+		padding: 0.5em;
+		.button__text {
+			border: 0;
+			clip: rect(1px, 1px, 1px, 1px);
+			clip-path: inset(50%);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+			word-wrap: normal !important;
+		}
+	}
+
+	&.no-border {
+		border-color: transparent;
 	}
 
 	position: relative;
@@ -56,7 +78,6 @@ $variants: list.append($variants, 'current');
 	transition:
 		border-color 0.25s ease-in-out,
 		color 0.25s ease-in-out;
-	margin-block-start: 1rem;
 	cursor: pointer;
 	vertical-align: top;
 	align-items: center;

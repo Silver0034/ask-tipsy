@@ -1,0 +1,72 @@
+---
+import Button from '@components/Button'
+import type { CollectionEntry } from 'astro:content'
+
+type RecipeCTAsProps = {
+	recipe: CollectionEntry<'recipes'>
+	ctas?: Array<'like' | 'save' | 'share' | 'visit'>
+}
+
+const { recipe, ctas = ['like', 'save', 'share', 'visit'] } =
+	Astro.props as RecipeCTAsProps
+
+// stop if no recipe
+if (!recipe) throw new Error('RecipeCTAs component requires a recipe prop')
+
+const like = ctas.includes('like')
+const save = ctas.includes('save')
+const share = ctas.includes('share')
+const visit = ctas.includes('visit')
+
+console.log('recipe:', recipe.id)
+---
+
+<slot name='before-start' />
+<div class='recipe-ctas'>
+	<slot name='start' />
+	{
+		like && (
+			<Button
+				class='recipe-cta like'
+				icon='solar:heart-angle-outline'
+				text='Like recipe'
+				variant='icon-only'
+			/>
+		)
+	}
+
+	{
+		save && (
+			<Button
+				class='recipe-cta save'
+				icon='solar:bill-check-linear'
+				text='Save recipe'
+				variant='icon-only'
+			/>
+		)
+	}
+
+	{
+		share && (
+			<Button
+				class='recipe-cta share'
+				icon='solar:share-linear'
+				text='Share recipe'
+				variant='icon-only'
+			/>
+		)
+	}
+
+	{
+		visit && (
+			<Button
+				class='recipe-cta visit'
+				icon='solar:square-arrow-right-linear'
+				text='View Recipe'
+				variant='background no-border'
+			/>
+		)
+	}
+	<slot name='end' />
+</div>
+<slot name='after-end' />

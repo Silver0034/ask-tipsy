@@ -1,7 +1,132 @@
 @use 'reset';
+@use 'breakpoints' as *;
+@use 'colors' as *;
+@use 'fonts';
 @use '../../public/styles/font-fallbacks.css';
 
 :root {
-	font-family: 'Montserrat Fallback: Arial', 'Montserrat Fallback: Roboto',
-		'sans-serif';
+	@include fonts.body;
+}
+
+.heading,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	@include fonts.heading(400);
+}
+
+h3,
+.h3 {
+	@include fonts.heading(700);
+}
+
+h2,
+.h2 {
+	@include fonts.heading(800);
+}
+
+h1,
+.h1 {
+	@include fonts.heading(900);
+}
+
+:root {
+	@each $key, $value in $colors {
+		--color-#{$key}: #{$value};
+	}
+}
+
+body {
+	--column-count: 12;
+	--gutter-count: 2;
+	--gutter-min: 2rem;
+	--max-width: 800px;
+	--gap: 2rem;
+	--header-height: 6rem;
+
+	@include breakpoint('small') {
+		--gutter-min: 1rem;
+	}
+
+	// Calculate the gutter width
+	--gutter: minmax(
+		var(--gutter-min),
+		calc(calc(100% - var(--max-width)) / var(--gutter-count))
+	);
+
+	display: grid;
+	grid-template-columns:
+		var(--gutter) repeat(var(--column-count), 1fr)
+		var(--gutter);
+	grid-template-rows: auto 1fr auto;
+	background: var(--color-background);
+	color: var(--color-text);
+}
+
+header,
+main,
+footer {
+	grid-column: 1 / -1;
+}
+
+main {
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+main > section {
+	grid-column: 2 / -2;
+	margin-block: var(--gap);
+	padding-block: var(--gap);
+
+	&:first-of-type {
+		margin-block-start: calc(var(--header-height) * -1);
+		padding-block-start: calc(var(--header-height) * 2);
+	}
+}
+
+.dark {
+	color: var(--color-background);
+}
+
+.drop-shadow {
+	filter: drop-shadow(0.15rem 0.152rem 0 var(--color-secondary-100));
+}
+
+a,
+a:visited {
+	color: inherit;
+}
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+
+	&:focus {
+		background-color: #eee;
+		clip: auto !important;
+		clip-path: none;
+		color: #444;
+		display: block;
+		font-size: 1em;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
 }

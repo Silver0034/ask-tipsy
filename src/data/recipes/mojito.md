@@ -1,4 +1,5 @@
 ---
+slug: 'mojito'
 title: 'Mojito'
 pubDate: 2024-05-27
 description: 'Refresh yourself with the vibrant taste of the Mojito.'
@@ -46,9 +47,9 @@ The Mojito pairs wonderfully with light and fresh fare. Try it with grilled shri
 
 ### Tips for the Perfect Mojito
 
--   **Fresh Ingredients**: Use fresh mint leaves and freshly squeezed lime juice for the best flavor.
--   **Proper Muddling**: Gently muddle the mint to release its essence without breaking it into pieces.
--   **Chill Properly**: Serve the Mojito well-chilled with plenty of ice to keep it refreshing.
+- **Fresh Ingredients**: Use fresh mint leaves and freshly squeezed lime juice for the best flavor.
+- **Proper Muddling**: Gently muddle the mint to release its essence without breaking it into pieces.
+- **Chill Properly**: Serve the Mojito well-chilled with plenty of ice to keep it refreshing.
 
 ### Get Creative
 

@@ -20,6 +20,7 @@
 		"@fontsource/kreon": "^5.1.0",
 		"@fontsource/truculenta": "^5.1.0",
 		"@iconify-json/fa6-solid": "^1.2.3",
+		"@iconify-json/solar": "^1.2.2",
 		"astro-icon": "^1.1.4",
 		"motion": "^11.15.0",
 		"sass": "^1.80.4",

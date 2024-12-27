@@ -1,4 +1,5 @@
 ---
+slug: 'pina-colada'
 title: 'Piña Colada'
 pubDate: 2024-05-27
 description: 'Transport yourself to a tropical paradise with the Piña Colada, a classic cocktail blending rum, coconut cream, and pineapple juice for a smooth and refreshing sip.'
@@ -43,9 +44,9 @@ The Piña Colada pairs perfectly with beachside snacks and tropical fare. Try it
 
 ### Tips for the Perfect Piña Colada
 
--   **Quality Ingredients**: Use fresh pineapple juice and high-quality coconut cream for the best flavor.
--   **Blending Technique**: Blend the ingredients with plenty of ice until smooth and creamy.
--   **Garnish with Style**: A pineapple slice and a cherry add a fun and festive touch to your Piña Colada.
+- **Quality Ingredients**: Use fresh pineapple juice and high-quality coconut cream for the best flavor.
+- **Blending Technique**: Blend the ingredients with plenty of ice until smooth and creamy.
+- **Garnish with Style**: A pineapple slice and a cherry add a fun and festive touch to your Piña Colada.
 
 ### Get Creative
 
