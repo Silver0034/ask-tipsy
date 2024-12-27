@@ -1,6 +1,19 @@
 import { z, defineCollection } from 'astro:content'
 import { glob, file } from 'astro/loaders'
 
+const categoriesCollection = defineCollection({
+	type: 'content',
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			icon: z.string(),
+			featured: z.boolean(),
+			description: z.string(),
+			image: image(),
+			imageAlt: z.string()
+		})
+})
+
 const faqsCollection = defineCollection({
 	loader: file('src/data/faqs.json'),
 	schema: z.object({
@@ -10,6 +23,44 @@ const faqsCollection = defineCollection({
 	})
 })
 
+const postsCollection = defineCollection({
+	type: 'content',
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			pubDate: z.date(),
+			description: z.string(),
+			author: z.string(),
+			image: image(),
+			imageAlt: z.string(),
+			tags: z.array(z.string())
+		})
+})
+
+const recipesCollection = defineCollection({
+	type: 'content',
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			pubDate: z.date(),
+			description: z.string(),
+			author: z.string(),
+			image: image(),
+			imageAlt: z.string(),
+			tags: z.array(z.string()),
+			ingredients: z.array(
+				z.object({
+					name: z.string(),
+					quantity: z.string()
+				})
+			),
+			instructions: z.array(z.string())
+		})
+})
+
 export const collections = {
-	faqs: faqsCollection
+	categories: categoriesCollection,
+	faqs: faqsCollection,
+	posts: postsCollection,
+	recipes: recipesCollection
 }
