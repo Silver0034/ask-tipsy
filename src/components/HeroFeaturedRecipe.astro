@@ -120,7 +120,7 @@ const { title, description, image, imageAlt } = data
 		<slot name='start' />
 		{
 			subtitle && (
-				<p class='subtitle h3'>
+				<p class='subtitle h3' data-motion='up-right'>
 					<Icon
 						class='highlight bottom-left'
 						name='highlight-bottom-left'
@@ -134,12 +134,12 @@ const { title, description, image, imageAlt } = data
 			)
 		}
 		<slot name='before-title' />
-		<h1>
+		<h1 data-motion='right'>
 			{title}
 		</h1>
 		<slot name='after-title' />
 		<slot name='before-description' />
-		<p class='description'>{description}</p>
+		<p class='description' data-motion='right'>{description}</p>
 		<slot name='before-description' />
 
 		<div class='ctas'>

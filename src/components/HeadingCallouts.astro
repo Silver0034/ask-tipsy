@@ -71,8 +71,8 @@ const words = [headingWithoutLastWord, lastWord]
 		text-align: center;
 		margin-inline: auto;
 		text-wrap: pretty;
-		@include fonts.heading(700);
 		padding-inline-end: 1em;
+		@include fonts.heading(700);
 	}
 
 	.arrow {
@@ -94,12 +94,12 @@ const words = [headingWithoutLastWord, lastWord]
 
 <section id={id} class:list={['heading-callout', classString]}>
 	<div class='content'>
-		<h2 class='drop-shadow'>
+		<h2 class='drop-shadow' data-motion='right'>
 			{words.map((word) => <span class='word'>{word}</span>)}
 		</h2>
-		<p>
+		<p data-motion='fade'>
 			{text}
 		</p>
 	</div>
-	<Icon class='arrow' name='arrow-down' />
+	<Icon class='arrow' name='arrow-down' data-motion='fade' />
 </section>

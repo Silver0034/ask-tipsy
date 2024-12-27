@@ -26,11 +26,21 @@ const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 	.word:nth-child(even) {
 		transform: translateY(-0.15em) rotate(-4deg);
 	}
+
+	a {
+		display: inline-block;
+	}
 </style>
 
 <header>
 	<div class='content'>
-		<a class='h2' href='/' aria-label='Home'>
+		<a
+			class='h2'
+			href='/'
+			aria-label='Home'
+			data-motion='down-right'
+			data-motion-stagger='header .word'
+		>
 			{words.map((word) => <span class='word drop-shadow'>{word}</span>)}
 		</a>
 	</div>

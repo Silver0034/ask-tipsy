@@ -20,7 +20,11 @@ const visit = ctas.includes('visit')
 ---
 
 <slot name='before-start' />
-<div class='recipe-ctas'>
+<div
+	class='recipe-ctas'
+	data-motion='up'
+	data-motion-stagger='.recipe-ctas .button'
+>
 	<slot name='start' />
 	{
 		like && (
