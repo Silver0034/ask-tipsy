@@ -47,10 +47,6 @@ body {
 	--gap: 2rem;
 	--header-height: 6rem;
 
-	@include breakpoint('small') {
-		--gutter-min: 1rem;
-	}
-
 	// Calculate the gutter width
 	--gutter: minmax(
 		var(--gutter-min),
@@ -64,6 +60,10 @@ body {
 	grid-template-rows: auto 1fr auto;
 	background: var(--color-background);
 	color: var(--color-text);
+
+	@include breakpoint('small') {
+		--gutter-min: 1rem;
+	}
 }
 
 header,
@@ -75,6 +75,8 @@ footer {
 main {
 	display: grid;
 	grid-template-columns: subgrid;
+	grid-template-rows: min-content;
+	height: min-content;
 }
 
 main > section {

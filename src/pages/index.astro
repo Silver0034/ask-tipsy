@@ -2,6 +2,7 @@
 // Imports & components
 import { Icon } from 'astro-icon/components'
 import Layout from '@layouts/LayoutPage.astro'
+import HeadingCallouts from '@components/HeadingCallouts.astro'
 import HeroFeaturedRecipe from '@components/HeroFeaturedRecipe.astro'
 import { getEntry } from 'astro:content'
 
@@ -28,8 +29,14 @@ const tabTitle = 'Home Page',
 >
 	<HeroFeaturedRecipe recipe={featuredRecipe} subtitle='Ring in 2025!' />
 
-	<!-- <h1>
+	<HeadingCallouts
+		id='intro'
+		heading="Hi, I'm Tipsy"
+		text='What would you like to enjoy today?'
+	/>
+</Layout>
+
+<!-- <h1>
 		Hello World
 		<Icon name='fa6-solid:check' />
 	</h1> -->
-</Layout>

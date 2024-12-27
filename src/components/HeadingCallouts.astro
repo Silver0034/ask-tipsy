@@ -1,0 +1,103 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const { id, class: classString, heading, text } = Astro.props
+
+const headingWords = heading.split(' ')
+const lastWord = headingWords.pop()
+const headingWithoutLastWord = headingWords.join(' ')
+const words = [headingWithoutLastWord, lastWord]
+---
+
+<style lang='scss'>
+	@use '@styles/fonts';
+	@use '@styles/breakpoints' as *;
+
+	.heading-callout {
+		display: grid;
+		grid-template-columns: subgrid;
+		--background-angle: -8deg;
+		grid-column: 1 / -1;
+	}
+
+	.content {
+		display: flex;
+		grid-column: 2 / -2;
+		gap: 2em;
+		grid-row: 1;
+		align-items: center;
+	}
+
+	h2 {
+		position: relative;
+		display: inline-block;
+
+		.word {
+			display: block;
+			line-height: 1.75rem;
+			filter: drop-shadow(0.15rem 0.152rem 0 var(--color-background));
+
+			&:first-child {
+				transform: rotate(1deg);
+				@include fonts.heading;
+			}
+			&:last-child {
+				transform: rotate(-4deg);
+			}
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: -0.5em;
+
+			background: var(--color-accent);
+			z-index: -1;
+			transform: rotate(var(--background-angle));
+
+			@include breakpoint('mobile', 'tablet') {
+				left: -3em;
+				transform: translateY(10%) rotate(var(--background-angle));
+			}
+		}
+	}
+
+	p {
+		position: relative;
+		max-width: 100%;
+		width: fit-content;
+		text-align: center;
+		margin-inline: auto;
+		text-wrap: pretty;
+		@include fonts.heading(700);
+		padding-inline-end: 1em;
+	}
+
+	.arrow {
+		--width: 5rem;
+
+		width: var(--width);
+		height: auto;
+		grid-row: 1;
+		grid-column: -3 / -1;
+		justify-self: end;
+		margin-top: 50%;
+		align-self: end;
+
+		@include breakpoint('tablet', 'desktop') {
+			grid-column: -3;
+		}
+	}
+</style>
+
+<section id={id} class:list={['heading-callout', classString]}>
+	<div class='content'>
+		<h2 class='drop-shadow'>
+			{words.map((word) => <span class='word'>{word}</span>)}
+		</h2>
+		<p>
+			{text}
+		</p>
+	</div>
+	<Icon class='arrow' name='arrow-down' />
+</section>
