@@ -1,17 +1,33 @@
 @font-face {
-  font-family: "Montserrat Fallback: Arial";
+  font-family: "Kreon Fallback: Arial";
   src: local('Arial'), local('ArialMT');
   font-display: swap;
-  ascent-override: 81.4217%;
-  descent-override: 21.1125%;
+  ascent-override: 102.408%;
+  descent-override: 30.0705%;
   line-gap-override: 0%;
-  size-adjust: 118.8872%;
+  size-adjust: 95.1097%;
 }
 @font-face {
-  font-family: "Montserrat Fallback: Roboto";
+  font-family: "Kreon Fallback: Roboto";
   src: local('Roboto'), local('Roboto-Regular');
   font-display: swap;
-  ascent-override: 81.2434%;
-  descent-override: 21.0662%;
-  size-adjust: 119.1482%;
+  ascent-override: 102.1837%;
+  descent-override: 30.0047%;
+  size-adjust: 95.3186%;
+}@font-face {
+  font-family: "Truculenta Fallback: Arial";
+  src: local('Arial'), local('ArialMT');
+  font-display: swap;
+  ascent-override: 126.8539%;
+  descent-override: 41.0765%;
+  line-gap-override: 0%;
+  size-adjust: 82.7724%;
+}
+@font-face {
+  font-family: "Truculenta Fallback: Roboto";
+  src: local('Roboto'), local('Roboto-Regular');
+  font-display: swap;
+  ascent-override: 126.576%;
+  descent-override: 40.9865%;
+  size-adjust: 82.9541%;
 }
