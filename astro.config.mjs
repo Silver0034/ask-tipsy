@@ -10,7 +10,21 @@ const { ORIGIN } = constants
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [openGraphImages(), sitemap(), icon()],
+	integrations: [
+		openGraphImages(),
+		sitemap(),
+		icon({
+			include: {
+				'fa6-solid': [],
+				solar: [
+					'heart-angle-outline',
+					'bill-check-linear',
+					'share-linear',
+					'square-arrow-right-linear'
+				]
+			}
+		})
+	],
 	prefetch: {
 		prefetchAll: true
 	},

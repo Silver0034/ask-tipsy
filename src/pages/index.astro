@@ -12,23 +12,20 @@ if (!featuredRecipe) {
 }
 
 // Page title for SEO / Featured Image / Meta Tags
-export const title = 'The Home Page from my Astro Template'
+export const title = 'Find the perfect drink recipe for any occasion'
 
 // Local constants
-const tabTitle = 'Home Page',
+const tabTitle = 'Explore',
 	description =
-		'This is a page description and it needs to be between 12 and 160 characters. This is a page description and it needs to be between 12 and 160 characters.',
+		'Cocktail recipes, mixology tips, & bar guides! AskTipsy helps you find, create, & master delicious drinks. Find the perfect recipe to responsibly enjoy today.',
 	structuredDataType = 'Organization'
-
-// Images
-// import featuredImage from '@assets/homepage-featured-image.png'
 ---
 
 <Layout
 	description={description}
 	structuredDataType={structuredDataType}
 	title={title}
-	tabTitle={tabTitle}
+	titleTab={tabTitle}
 >
 	<Hero
 		description={featuredRecipe.data.description}
