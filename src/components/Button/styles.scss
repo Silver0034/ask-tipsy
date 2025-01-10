@@ -1,47 +1,16 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '@styles/colors' as *;
-
-$variants: map.keys($colors);
-// Add "current" to the list of variants
-$variants: list.append($variants, 'current');
+@use '@styles/colors';
 
 .button {
 	--btn-color: inherit;
-	--btn-color-border: var(--color-text);
+	--btn-color-border: #{colors.get('border')};
 	--btn-color-background: transparent;
-	--btn-color-hover: var(--color-text);
-	--btn-color-border-hover: var(--color-tertiary);
-	--btn-color-background-hover: var(--color-tertiary);
+	--btn-color-hover: #{colors.get('foreground', 'active')};
+	--btn-color-border-hover: #{colors.get('border', 'active')};
+	--btn-color-background-hover: #{colors.get('background', 'active')};
 
 	--color-current: currentColor;
-
-	&.background {
-		--btn-color: var(--btn-color-background);
-		--btn-color-border: var(--btn-color-background);
-	}
-
-	@each $variant in $variants {
-		&.fill-#{$variant} {
-			--btn-color: var(--color-text);
-			--btn-color-border: var(--color-#{$variant});
-			--btn-color-background: var(--color-#{$variant});
-		}
-
-		&.#{$variant} {
-			--btn-color: var(--color-#{$variant});
-			--btn-color-border: var(--color-#{$variant});
-		}
-	}
-
-	&.fill-text {
-		--btn-color: var(--color-background);
-	}
-
-	&.fill-tertiary {
-		--btn-color-border-hover: var(--color-primary);
-		--btn-color-background-hover: var(--color-primary);
-	}
 
 	&.icon-only {
 		border: none;

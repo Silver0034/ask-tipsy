@@ -1,12 +1,15 @@
 ---
 // Imports & components
-import { Icon } from 'astro-icon/components'
 import Layout from '@layouts/LayoutPage.astro'
 import HeadingCallouts from '@components/HeadingCallouts.astro'
-import HeroFeaturedRecipe from '@components/HeroFeaturedRecipe.astro'
+import Hero from '@components/Hero.astro'
+import RecipeCTARepeater from '@components/RecipeCTARepeater.astro'
 import { getEntry } from 'astro:content'
 
 const featuredRecipe = await getEntry('recipes', 'cosmopolitan')
+if (!featuredRecipe) {
+	throw new Error('No featured recipe found')
+}
 
 // Page title for SEO / Featured Image / Meta Tags
 export const title = 'The Home Page from my Astro Template'
@@ -27,7 +30,19 @@ const tabTitle = 'Home Page',
 	title={title}
 	tabTitle={tabTitle}
 >
-	<HeroFeaturedRecipe recipe={featuredRecipe} subtitle='Ring in 2025!' />
+	<Hero
+		description={featuredRecipe.data.description}
+		image={featuredRecipe.data.image}
+		imageAlt={featuredRecipe.data.imageAlt}
+		subtitle='Ring in 2025!'
+		title={featuredRecipe.data.title}
+	>
+		<RecipeCTARepeater
+			slot='ctas'
+			recipe={featuredRecipe}
+			ctas={[['like', 'save', 'share'], ['visit']]}
+		/>
+	</Hero>
 
 	<HeadingCallouts
 		id='intro'
@@ -35,8 +50,3 @@ const tabTitle = 'Home Page',
 		text='What would you like to enjoy today?'
 	/>
 </Layout>
-
-<!-- <h1>
-		Hello World
-		<Icon name='fa6-solid:check' />
-	</h1> -->

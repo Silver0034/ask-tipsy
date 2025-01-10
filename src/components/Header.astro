@@ -2,7 +2,9 @@
 const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 ---
 
-<style>
+<style lang='scss'>
+	@use '@styles/colors';
+
 	header {
 		position: sticky;
 		display: grid;
@@ -12,7 +14,7 @@ const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 		width: 100%;
 		height: var(--header-height);
 		margin-block-end: calc(var(--header-height) * -1);
-		color: var(--color-background);
+		color: colors.get('background');
 		align-content: center;
 	}
 	.content {
@@ -20,10 +22,16 @@ const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 	}
 	.word {
 		display: inline-block;
-		transform: rotate(1deg);
+		margin-left: 0.25ch;
+
 		line-height: 1.5em;
+
+		span {
+			display: inline-block;
+			transform: rotate(1deg);
+		}
 	}
-	.word:nth-child(even) {
+	.word:nth-child(even) span {
 		transform: translateY(-0.15em) rotate(-4deg);
 	}
 
@@ -41,7 +49,13 @@ const words = SITE_NAME.split(/(?=[A-Z])|\s+/)
 			data-motion='down-right'
 			data-motion-stagger='header .word'
 		>
-			{words.map((word) => <span class='word drop-shadow'>{word}</span>)}
+			{
+				words.map((word) => (
+					<span class='word drop-shadow'>
+						<span>{word}</span>
+					</span>
+				))
+			}
 		</a>
 	</div>
 </header>

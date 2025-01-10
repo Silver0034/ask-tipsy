@@ -1,0 +1,36 @@
+---
+import RecipeCTAs from '@components/RecipeCTAs.astro'
+import type { CollectionEntry } from 'astro:content'
+
+const { ctas, recipe } = Astro.props as {
+	ctas: string[][]
+	recipe: CollectionEntry<'recipes'>
+}
+---
+
+<style lang='scss'>
+	@use '@styles/breakpoints' as *;
+
+	.ctas {
+		display: flex;
+		justify-content: space-between;
+		gap: 1em;
+		margin-block-start: 1em;
+
+		@include breakpoint('small') {
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+</style>
+
+<div class='ctas'>
+	{
+		ctas.map((cta) => (
+			<RecipeCTAs recipe={recipe} ctas={cta}>
+				<slot name='ctas-start' slot='start' />
+				<slot name='ctas-end' slot='end' />
+			</RecipeCTAs>
+		))
+	}
+</div>

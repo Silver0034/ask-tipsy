@@ -1,59 +1,107 @@
 @use 'sass:map';
-@use 'sass:list' as *;
 
-@function setParts($hue, $sat, $lit) {
-	@return (hue: $hue, 'sat': $sat, 'lit': $lit);
-}
-
-@function setColorFromParts($parts) {
-	$hue: map.get($parts, 'hue');
-	$sat: map.get($parts, 'sat');
-	$lit: map.get($parts, 'lit');
-	$alpha: map.get($parts, 'alpha');
-	@if $alpha == null {
-		$alpha: 1;
-	}
-
-	@return hsla($hue, $sat, $lit, $alpha);
-}
-
-$color-parts: (
-	background: setParts(43, 100%, 99%),
-	text: setParts(45, 10%, 8%),
-	primary: setParts(344, 100%, 29%),
-	secondary: setParts(14, 56%, 45%),
-	secondary-100: setParts(10, 80%, 71%),
-	tertiary: setParts(24, 79%, 77%),
-	accent: setParts(210, 58%, 79%)
+$semantic-colors-light: (
+	'foreground': (
+		'default': var(--palette-primary-900),
+		'accent': var(--palette-accent-400),
+		'active': var(--palette-primary-400),
+		'muted': var(--palette-neutral-600),
+		'overlay': var(--palette-neutral-300),
+		'danger': var(--palette-danger-600),
+		'success': var(--palette-success-600),
+		'warning': var(--palette-warning-600),
+		'info': var(--palette-info-600)
+	),
+	'background': (
+		'default': var(--palette-neutral-100),
+		'accent': var(--palette-accent-100),
+		'active': var(--palette-neutral-400),
+		'muted': var(--palette-neutral-200),
+		'overlay': var(--palette-neutral-900),
+		'danger': var(--palette-danger-100),
+		'success': var(--palette-success-100),
+		'warning': var(--palette-warning-100),
+		'info': var(--palette-info-100)
+	),
+	'border': (
+		'default': var(--palette-primary-700),
+		'accent': var(--palette-accent-600),
+		'active': var(--palette-primary-400),
+		'muted': var(--palette-neutral-400),
+		'overlay': var(--palette-neutral-200),
+		'danger': var(--palette-danger-800),
+		'success': var(--palette-success-800),
+		'warning': var(--palette-warning-800),
+		'info': var(--palette-info-800)
+	),
+	'interaction': (
+		'default': var(--palette-accent-400),
+		'accent': var(--palette-accent-400),
+		'active': var(--palette-accent-300),
+		'muted': var(--palette-primary-200),
+		'overlay': var(--palette-accent-300),
+		'danger': var(--palette-danger-400),
+		'success': var(--palette-success-400),
+		'warning': var(--palette-warning-400),
+		'info': var(--palette-info-400)
+	)
 );
 
-$colors: ();
+$semantic-colors-dark: (
+	'foreground': (
+		'default': var(--palette-neutral-100),
+		'accent': var(--palette-accent-100),
+		'active': var(--palette-neutral-100),
+		'muted': var(--palette-neutral-400),
+		'overlay': var(--palette-neutral-700),
+		'danger': var(--palette-danger-400),
+		'success': var(--palette-success-400),
+		'warning': var(--palette-warning-400),
+		'info': var(--palette-info-400)
+	),
+	'background': (
+		'default': var(--palette-neutral-900),
+		'accent': var(--palette-accent-700),
+		'active': var(--palette-neutral-700),
+		'muted': var(--palette-neutral-800),
+		'overlay': var(--palette-neutral-100),
+		'danger': var(--palette-danger-900),
+		'success': var(--palette-success-900),
+		'warning': var(--palette-warning-900),
+		'info': var(--palette-info-900)
+	),
+	'border': (
+		'default': var(--palette-primary-300),
+		'accent': var(--palette-accent-400),
+		'active': var(--palette-accent-100),
+		'muted': var(--palette-neutral-600),
+		'overlay': var(--palette-neutral-800),
+		'danger': var(--palette-danger-200),
+		'success': var(--palette-success-200),
+		'warning': var(--palette-warning-200),
+		'info': var(--palette-info-200)
+	),
+	'interaction': (
+		'default': var(--palette-accent-600),
+		'accent': var(--palette-accent-600),
+		'active': var(--palette-accent-700),
+		'muted': var(--palette-primary-800),
+		'overlay': var(--palette-accent-700),
+		'danger': var(--palette-danger-600),
+		'success': var(--palette-success-600),
+		'warning': var(--palette-warning-600),
+		'info': var(--palette-info-600)
+	)
+);
 
-// For each color part, setColorFromParts with same name
-@each $name, $parts in $color-parts {
-	$colors: map.merge(
-		$colors,
-		(
-			$name: setColorFromParts($parts)
-		)
-	);
-}
-
-// For each color part, add opacity variants to $colors #{$name}-opacity-${100 - 900}: setColorFromParts($parts, 0.1 - 1)
-$opacity-variants: ();
-@each $name, $color in $color-parts {
-	@for $i from 1 through 19 {
-		$opacity: $i * 0.05;
-		$hue: map.get($color, 'hue');
-		$sat: map.get($color, 'sat');
-		$lit: map.get($color, 'lit');
-
-		$opacity-variants: map.merge(
-			$opacity-variants,
-			(#{$name}-opacity-#{$i * 50}: hsla($hue, $sat, $lit, $opacity))
-		);
+@function get($type, $state: 'default') {
+	// return an error if the type or state is not found
+	@if not map.has-key($semantic-colors-light, $type) {
+		@error 'Semantic color type `#{$type}` not found.';
 	}
-}
+	@if not map.has-key(map.get($semantic-colors-light, $type), $state) {
+		@error 'Semantic color state `#{$state}` not found for type `#{$type}`.';
+	}
 
-// Add each opacity variant to $colors
-$colors: map.merge($colors, $opacity-variants);
+	@return #{var(--color-#{$type}-#{$state})};
+}

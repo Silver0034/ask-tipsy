@@ -1,0 +1,178 @@
+---
+import { Icon } from 'astro-icon/components'
+import { Picture } from 'astro:assets'
+
+// images
+import separator from '@assets/wavy-separator.svg?raw'
+
+type Props = {
+	description?: string
+	image?: ImageMetadata
+	imageAlt?: string
+	subtitle?: string
+	title?: string
+}
+
+const { title, description, subtitle, image, imageAlt } = Astro.props as Props
+---
+
+<style lang='scss'>
+	@use '@styles/fonts';
+	@use '@styles/breakpoints' as *;
+	@use '@styles/colors';
+
+	#hero {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		grid-column: 1 / -1;
+		height: 70vh;
+		min-height: min-content;
+		padding-block-end: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.5) 0%,
+				rgba(0, 0, 0, 0.5) 100%
+			);
+			z-index: -1;
+		}
+	}
+	.background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		z-index: -2;
+	}
+
+	.wrap {
+		display: grid;
+		grid-template-columns: var(--base-grid-columns);
+	}
+
+	.content,
+	.ctas {
+		grid-column: 2 / -2;
+	}
+
+	.end {
+		margin-block-start: auto;
+	}
+
+	.subtitle {
+		position: relative;
+		display: inline-block;
+		transform: rotate(-2deg);
+		margin-block: 1em;
+	}
+
+	.highlight {
+		--highlight-size: 1rem;
+		--offset-x: 1rem;
+		--offset-y: 0.45rem;
+		position: absolute;
+		height: auto;
+		width: var(--highlight-size);
+		color: colors.get('foreground', 'accent');
+
+		&.bottom-left {
+			left: 0;
+			bottom: 0;
+			transform: translateX(calc(var(--offset-x) * -1))
+				translateY(var(--offset-y));
+		}
+
+		&.top-right {
+			right: 0;
+			right: 0;
+			transform: translateX(var(--offset-x))
+				translateY(calc(var(--offset-y) * -1));
+		}
+	}
+
+	h1 {
+		@include fonts.body(700);
+	}
+
+	.separator {
+		grid-column: 1 / -1;
+		transform: translateY(5px);
+	}
+</style>
+
+<slot name='before-start' />
+<section id='hero' class='featured-recipe dark'>
+	<div class='wrap'>
+		<div class='content'>
+			<slot name='start' />
+			<slot name='subtitle'>
+				{
+					subtitle && (
+						<p class='subtitle h3' data-motion='up-right'>
+							<Icon
+								class='highlight bottom-left'
+								name='highlight-bottom-left'
+							/>
+							{subtitle}
+							<Icon
+								class='highlight top-right'
+								name='highlight-top-right'
+							/>
+						</p>
+					)
+				}
+			</slot>
+			<slot name='before-title' />
+			<slot name='title'>
+				{title && <h1 data-motion='right'>{title}</h1>}
+			</slot>
+			<slot name='after-title' />
+			<slot name='before-description' />
+			<slot name='description'>
+				{
+					description && (
+						<p class='description' data-motion='right'>
+							{description}
+						</p>
+					)
+				}
+			</slot>
+			<slot name='before-description' />
+
+			<slot />
+		</div>
+	</div>
+
+	<div class='end'>
+		<div class='wrap'>
+			<div class='ctas'>
+				<slot name='ctas' />
+			</div>
+		</div>
+		<slot name='end' />
+		<slot name='separator'>
+			<div class='separator'>
+				<Fragment set:html={separator} />
+			</div>
+		</slot>
+	</div>
+
+	<slot name='background'>
+		{
+			image && imageAlt && (
+				<Picture class='background' src={image} alt={imageAlt} />
+			)
+		}
+	</slot>
+</section>
+<slot name='after-end' />

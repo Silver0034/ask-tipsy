@@ -1,5 +1,7 @@
+@use '@styles/colors';
+
 section {
-	background-color: var(--color-neutral);
+	background-color: colors.get('background', 'muted');
 }
 ul {
 	list-style: none;
@@ -13,7 +15,7 @@ summary {
 
 details {
 	padding-block: 1.25rem;
-	border-bottom: 1px solid var(--color-dim);
+	border-bottom: 1px solid colors.get('border', 'muted');
 }
 
 details > summary {

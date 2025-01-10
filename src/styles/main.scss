@@ -1,8 +1,27 @@
 @use 'reset';
 @use 'breakpoints' as *;
-@use 'colors' as *;
+@use 'colors';
 @use 'fonts';
 @use '../../public/styles/font-fallbacks.css';
+@use 'palettes';
+
+@include palettes.create(#9b1a50, #7e400e);
+:root {
+	@each $type, $states in colors.$semantic-colors-light {
+		@each $state, $color in $states {
+			--color-#{$type}-#{$state}: #{$color};
+		}
+	}
+}
+.dark {
+	color: colors.get('foreground', 'default');
+
+	@each $type, $states in colors.$semantic-colors-dark {
+		@each $state, $color in $states {
+			--color-#{$type}-#{$state}: #{$color};
+		}
+	}
+}
 
 :root {
 	@include fonts.body;
@@ -33,12 +52,6 @@ h1,
 	@include fonts.heading(900);
 }
 
-:root {
-	@each $key, $value in $colors {
-		--color-#{$key}: #{$value};
-	}
-}
-
 body {
 	--column-count: 12;
 	--gutter-count: 2;
@@ -53,13 +66,15 @@ body {
 		calc(calc(100% - var(--max-width)) / var(--gutter-count))
 	);
 
-	display: grid;
-	grid-template-columns:
-		var(--gutter) repeat(var(--column-count), 1fr)
+	--base-grid-columns: var(--gutter) repeat(var(--column-count), 1fr)
 		var(--gutter);
+
+	display: grid;
+	grid-template-columns: var(--base-grid-columns);
+
 	grid-template-rows: auto 1fr auto;
-	background: var(--color-background);
-	color: var(--color-text);
+	background: colors.get('background');
+	color: colors.get('foreground');
 
 	@include breakpoint('small') {
 		--gutter-min: 1rem;
@@ -90,12 +105,8 @@ main > section {
 	}
 }
 
-.dark {
-	color: var(--color-background);
-}
-
 .drop-shadow {
-	filter: drop-shadow(0.15rem 0.152rem 0 var(--color-secondary-100));
+	filter: drop-shadow(0.15rem 0.152rem 0 colors.get('foreground', 'accent'));
 }
 
 a,
@@ -116,10 +127,10 @@ a:visited {
 	word-wrap: normal !important;
 
 	&:focus {
-		background-color: #eee;
+		background-color: colors.get('background', 'active');
 		clip: auto !important;
 		clip-path: none;
-		color: #444;
+		color: colors.get('foreground', 'active');
 		display: block;
 		font-size: 1em;
 		height: auto;
@@ -130,5 +141,13 @@ a:visited {
 		top: 5px;
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+picture:has(img) {
+	display: contents;
+
+	source {
+		display: none;
 	}
 }
