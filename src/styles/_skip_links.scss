@@ -1,0 +1,13 @@
+@use 'colors';
+
+.skip-link {
+	background: colors.get('background', 'accent');
+	height: 30px;
+	left: 50%;
+	padding: 8px;
+	position: absolute;
+	transition: transform 0.3s;
+	&:not(:focus) {
+		transform: translateX(-100vw);
+	}
+}

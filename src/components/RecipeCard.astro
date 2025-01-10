@@ -1,0 +1,78 @@
+---
+import { Picture } from 'astro:assets'
+import RecipeCTAs from '@components/RecipeCTAs.astro'
+import type { CollectionEntry } from 'astro:content'
+
+const { recipe } = Astro.props as { recipe: CollectionEntry<'recipes'> }
+if (!recipe) {
+	throw new Error('recipe is required for RecipeCard')
+}
+
+const { data, id } = recipe
+
+const { title, image, imageAlt } = data
+
+const href = `/cocktails/${id}/`
+---
+
+<style lang='scss'>
+	@use '@styles/colors';
+	@use '@styles/fonts';
+
+	.recipe-card {
+		position: relative;
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: space-between;
+		aspect-ratio: 3 / 2;
+		width: 12rem;
+		border-radius: 1em;
+		overflow: hidden;
+		border: 1px solid colors.get('border', 'muted');
+		scroll-snap-align: start;
+
+		&:hover,
+		&:focus,
+		&:focus-within {
+			border-color: colors.get('border', 'active');
+		}
+	}
+
+	.link,
+	.background {
+		position: absolute;
+		inset: 0;
+	}
+
+	.background {
+		object-fit: cover;
+		z-index: -2;
+	}
+
+	.ctas {
+		text-align: right;
+	}
+
+	.title {
+		padding: 0.5em;
+		background-color: color(
+			from colors.get('background', 'muted') srgb r g b / 0.75
+		);
+		margin: 0.5em;
+		@include fonts.body(300);
+	}
+</style>
+
+<div class='recipe-card dark'>
+	<slot name='ctas'>
+		<div class='ctas'>
+			<RecipeCTAs recipe={recipe} ctas={['like']} />
+		</div>
+	</slot>
+	<slot name='title'>
+		<a class='title' href={href} aria-label={title} title={title}>{title}</a
+		>
+	</slot>
+	<a class='link' href={href} aria-label={title} title={title}></a>
+	<Picture class='background' src={image} alt={imageAlt} />
+</div>

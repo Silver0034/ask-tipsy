@@ -4,6 +4,7 @@
 @use 'fonts';
 @use '../../public/styles/font-fallbacks.css';
 @use 'palettes';
+@use 'skip_links';
 
 @include palettes.create(#9b1a50, #7e400e);
 :root {
@@ -149,5 +150,17 @@ picture:has(img) {
 
 	source {
 		display: none;
+	}
+}
+
+body * {
+	&::-webkit-scrollbar {
+		height: 0.5em; /* height of horizontal scrollbar ← You're missing this */
+		width: 0.5em; /* width of vertical scrollbar */
+		background: colors.get('background', 'muted');
+	}
+	&::-webkit-scrollbar-thumb:horizontal {
+		background: colors.get('foreground', 'accent');
+		border-radius: 10px;
 	}
 }

@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content'
+import RecipeCard from '@components/RecipeCard.astro'
+import type { CollectionEntry } from 'astro:content'
+
+const recipesMaxCount = 7
+
+const { class: classes, id, title, filterTag } = Astro.props
+
+if (!filterTag) {
+	throw new Error('filterTag is required for RecipeCardSlider')
+}
+
+const recipes = (await getCollection('recipes', ({ data }) => {
+	return data.tags.includes(filterTag)
+})) as CollectionEntry<'recipes'>[]
+
+if (!recipes.length) {
+	throw new Error(`No recipes found for tag "${filterTag}"`)
+}
+
+if (recipes.length > recipesMaxCount) recipes.length = recipesMaxCount
+
+const randomIDForSkipLink = Math.random().toString(36).substring(2, 15)
+---
+
+<style>
+	.recipe-card-slider {
+		grid-column: 1 / -1;
+	}
+
+	.recipes {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 1rem;
+		overflow: auto;
+		white-space: nowrap;
+		padding-block-end: 1em;
+		grid-column: 1 / -1;
+		padding-inline-start: var(--gutter-min);
+		scroll-snap-type: x mandatory;
+	}
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		grid-column: 2 / -2;
+	}
+
+	.wrap {
+		display: grid;
+		grid-template-columns: var(--base-grid-columns);
+	}
+</style>
+
+<section id={id} class:list={['recipe-card-slider', classes]}>
+	<a href=`#${randomIDForSkipLink}` class='skip-link'>Skip {title}</a>
+	<slot name='top'>
+		<div class='wrap'>
+			<div class='top'>
+				<slot name='title'>
+					<h2>{title}</h2>
+				</slot>
+				<slot name='links'>
+					<a href={`/tags/${filterTag}/`} class='view-all'>View all</a
+					>
+				</slot>
+			</div>
+		</div>
+	</slot>
+	<div class='recipes'>
+		{recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+	</div>
+	<span id={randomIDForSkipLink}></span>
+</section>
