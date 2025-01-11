@@ -15,6 +15,8 @@ const recipes = (await getCollection('recipes', ({ data }) => {
 	return data.tags.includes(filterTag)
 })) as CollectionEntry<'recipes'>[]
 
+const totalRecipeCount = recipes.length
+
 if (!recipes.length) {
 	throw new Error(`No recipes found for tag "${filterTag}"`)
 }
@@ -105,9 +107,16 @@ const randomIDForSkipLink = Math.random().toString(36).substring(2, 15)
 				<h2 class='stagger'>{title}</h2>
 			</slot>
 			<slot name='links'>
-				<a href={`/tags/${filterTag}/`} class='view-all stagger'
-					>View all</a
-				>
+				{
+					totalRecipeCount > recipesMaxCount && (
+						<a
+							href={`/tags/${filterTag}/`}
+							class='view-all stagger'
+						>
+							View all
+						</a>
+					)
+				}
 			</slot>
 		</div>
 	</slot>
