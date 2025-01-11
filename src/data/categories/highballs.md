@@ -1,4 +1,5 @@
 ---
+slug: 'highballs'
 title: 'Highballs'
 icon: 'fa-regular fa-glass-water'
 featured: false

@@ -1,4 +1,5 @@
 ---
+slug: 'gin'
 title: 'Gin Cocktails'
 icon: 'fa-regular fa-lemon'
 featured: false

@@ -1,4 +1,5 @@
 ---
+slug: 'tiki'
 title: 'Tiki'
 icon: 'fa-regular fa-sailboat'
 featured: true
@@ -21,9 +22,9 @@ Whether you're throwing a luau, lounging by the pool, or simply dreaming of a be
 
 ## Tipsy’s Tips for Perfect Tiki Drinks
 
--   **Tropical Ingredients**: Embrace the tropics with fresh fruits like pineapple, mango, and coconut. Don't forget the essential lime juice for that zesty kick.
--   **Rich Flavors**: Use flavorful rums and don't shy away from adding a bit of spice with ingredients like cinnamon or nutmeg. Syrups like orgeat and falernum can add depth and sweetness.
--   **Fun Garnishes**: Tiki drinks are all about presentation. Get creative with garnishes like fruit slices, paper umbrellas, and even flaming lime shells for that extra wow factor.
+- **Tropical Ingredients**: Embrace the tropics with fresh fruits like pineapple, mango, and coconut. Don't forget the essential lime juice for that zesty kick.
+- **Rich Flavors**: Use flavorful rums and don't shy away from adding a bit of spice with ingredients like cinnamon or nutmeg. Syrups like orgeat and falernum can add depth and sweetness.
+- **Fun Garnishes**: Tiki drinks are all about presentation. Get creative with garnishes like fruit slices, paper umbrellas, and even flaming lime shells for that extra wow factor.
 
 ## Embark on a Tiki Adventure
 

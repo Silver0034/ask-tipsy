@@ -1,4 +1,5 @@
 ---
+slug: 'daiquiris'
 title: 'Daiquiris'
 icon: 'fa-regular fa-cocktail'
 featured: false
@@ -21,9 +22,9 @@ Daiquiris are incredibly versatile, making them suitable for any event. Whether 
 
 ## Tipsy’s Tips for Perfect Daiquiris
 
--   **Fresh Ingredients**: Use fresh lime juice and high-quality rum to ensure the best flavor. Freshly squeezed juice makes a significant difference.
--   **Balance is Key**: Achieve the perfect balance of sweet and sour by adjusting the sugar to your taste. Start with the classic recipe and tweak from there.
--   **Chill Everything**: Daiquiris are best served icy cold. Chill your glassware and use plenty of ice when shaking your drink.
+- **Fresh Ingredients**: Use fresh lime juice and high-quality rum to ensure the best flavor. Freshly squeezed juice makes a significant difference.
+- **Balance is Key**: Achieve the perfect balance of sweet and sour by adjusting the sugar to your taste. Start with the classic recipe and tweak from there.
+- **Chill Everything**: Daiquiris are best served icy cold. Chill your glassware and use plenty of ice when shaking your drink.
 
 ## Dive into the World of Daiquiris
 

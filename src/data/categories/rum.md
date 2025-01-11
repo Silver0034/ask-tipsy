@@ -1,4 +1,5 @@
 ---
+slug: 'rum'
 title: 'Rum Cocktails'
 icon: 'fa-regular fa-anchor'
 featured: false

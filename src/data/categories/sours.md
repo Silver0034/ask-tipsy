@@ -1,4 +1,5 @@
 ---
+slug: 'sours'
 title: 'Sours'
 icon: 'fa-regular fa-lemon'
 featured: false

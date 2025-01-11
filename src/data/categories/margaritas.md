@@ -1,4 +1,5 @@
 ---
+slug: 'margaritas'
 title: 'Margaritas'
 icon: 'fa-regular fa-cocktail'
 featured: false

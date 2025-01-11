@@ -1,4 +1,5 @@
 ---
+slug: 'fall'
 title: 'Fall Drinks'
 icon: 'fa-regular fa-leaf'
 featured: false
@@ -21,9 +22,9 @@ Fall drinks are incredibly versatile, making them suitable for any fall occasion
 
 ## Tipsy’s Tips for Perfect Fall Drinks
 
--   **Embrace Seasonal Ingredients**: Take advantage of the abundance of fall produce like apples, pumpkins, and cranberries to create flavorful and festive cocktails.
--   **Incorporate Warm Spices**: Add a touch of warmth and depth to your drinks with spices like cinnamon, nutmeg, and cloves for a cozy fall vibe.
--   **Experiment with Cozy Flavors**: Get creative with your fall cocktails by incorporating ingredients like caramel, maple syrup, and chai for a truly indulgent experience.
+- **Embrace Seasonal Ingredients**: Take advantage of the abundance of fall produce like apples, pumpkins, and cranberries to create flavorful and festive cocktails.
+- **Incorporate Warm Spices**: Add a touch of warmth and depth to your drinks with spices like cinnamon, nutmeg, and cloves for a cozy fall vibe.
+- **Experiment with Cozy Flavors**: Get creative with your fall cocktails by incorporating ingredients like caramel, maple syrup, and chai for a truly indulgent experience.
 
 ## Dive into the World of Fall Drinks
 

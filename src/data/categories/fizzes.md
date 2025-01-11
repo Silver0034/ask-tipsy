@@ -1,4 +1,5 @@
 ---
+slug: 'fizzes'
 title: 'Fizzes'
 icon: 'fa-regular fa-cocktail'
 featured: false
@@ -21,9 +22,9 @@ Fizzes are incredibly versatile, making them suitable for any occasion. Whether 
 
 ## Tipsy’s Tips for Perfect Fizzes
 
--   **Use Fresh Ingredients**: Freshly squeezed citrus juice is key to a delicious fizz. Opt for high-quality spirits and carbonated water for the best results.
--   **Shake it Up**: To achieve the perfect frothy texture, shake your fizz vigorously with ice before straining into a glass.
--   **Experiment with Flavors**: Don't be afraid to get creative with your fizz recipes. Try different combinations of spirits, syrups, and bitters to create your own signature fizz.
+- **Use Fresh Ingredients**: Freshly squeezed citrus juice is key to a delicious fizz. Opt for high-quality spirits and carbonated water for the best results.
+- **Shake it Up**: To achieve the perfect frothy texture, shake your fizz vigorously with ice before straining into a glass.
+- **Experiment with Flavors**: Don't be afraid to get creative with your fizz recipes. Try different combinations of spirits, syrups, and bitters to create your own signature fizz.
 
 ## Dive into the World of Fizzes
 

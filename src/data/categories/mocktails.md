@@ -1,4 +1,5 @@
 ---
+slug: 'mocktails'
 title: 'Mocktails'
 icon: 'fa-regular fa-glass-water'
 featured: true

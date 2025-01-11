@@ -1,4 +1,5 @@
 ---
+slug: 'classic'
 title: 'Classic Cocktails'
 icon: 'fa-solid fa-martini-glass-citrus'
 featured: true

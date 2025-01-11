@@ -1,4 +1,5 @@
 ---
+slug: 'new'
 title: 'New'
 icon: 'fa-solid fa-martini-glass-citrus'
 featured: true

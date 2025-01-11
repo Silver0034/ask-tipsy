@@ -1,4 +1,5 @@
 ---
+slug: 'spring'
 title: 'Springtime Drinks'
 icon: 'fa-solid fa-seedling'
 featured: false
@@ -21,9 +22,9 @@ Whether you're hosting a garden party, enjoying a picnic in the park, or simply 
 
 ## Tipsy’s Tips for Perfect Springtime Drinks
 
--   **Seasonal Ingredients**: Take advantage of the bounty of spring produce. Fresh berries, citrus fruits, and fragrant herbs are ideal for creating refreshing drinks.
--   **Light and Refreshing**: Springtime drinks should be light and invigorating. Think sparkling waters, fresh juices, and subtle sweeteners to keep your drinks crisp and clean.
--   **Beautiful Garnishes**: Enhance the visual appeal of your drinks with lovely garnishes. Edible flowers, fresh mint sprigs, and citrus slices can make your beverages as beautiful as they are delicious.
+- **Seasonal Ingredients**: Take advantage of the bounty of spring produce. Fresh berries, citrus fruits, and fragrant herbs are ideal for creating refreshing drinks.
+- **Light and Refreshing**: Springtime drinks should be light and invigorating. Think sparkling waters, fresh juices, and subtle sweeteners to keep your drinks crisp and clean.
+- **Beautiful Garnishes**: Enhance the visual appeal of your drinks with lovely garnishes. Edible flowers, fresh mint sprigs, and citrus slices can make your beverages as beautiful as they are delicious.
 
 ## Sip into Spring
 

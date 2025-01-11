@@ -1,4 +1,5 @@
 ---
+slug: 'martinis'
 title: 'Martinis'
 icon: 'fa-regular fa-martini-glass'
 featured: false

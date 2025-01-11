@@ -1,4 +1,5 @@
 ---
+slug: 'winter'
 title: 'Winter Drinks'
 icon: 'fa-regular fa-snowflake'
 featured: false
@@ -21,9 +22,9 @@ Winter drinks are incredibly versatile, making them suitable for any winter occa
 
 ## Tipsy’s Tips for Perfect Winter Drinks
 
--   **Embrace Festive Flavors**: Incorporate classic holiday flavors like cinnamon, nutmeg, and peppermint to infuse your drinks with the festive spirit of the season.
--   **Indulge in Creamy Delights**: Treat yourself to rich and creamy cocktails like hot chocolate martinis and Irish coffees for a truly indulgent winter experience.
--   **Experiment with Warming Spirits**: Explore the world of warming spirits like whiskey, brandy, and spiced rum to create drinks that will keep you cozy all season long.
+- **Embrace Festive Flavors**: Incorporate classic holiday flavors like cinnamon, nutmeg, and peppermint to infuse your drinks with the festive spirit of the season.
+- **Indulge in Creamy Delights**: Treat yourself to rich and creamy cocktails like hot chocolate martinis and Irish coffees for a truly indulgent winter experience.
+- **Experiment with Warming Spirits**: Explore the world of warming spirits like whiskey, brandy, and spiced rum to create drinks that will keep you cozy all season long.
 
 ## Dive into the World of Winter Drinks
 
