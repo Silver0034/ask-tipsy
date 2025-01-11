@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { id, class: classString, heading, text } = Astro.props
+const { arrowHref, id, class: classString, heading, text } = Astro.props
 
 const headingWords = heading.split(' ')
 const lastWord = headingWords.pop()
@@ -93,14 +93,27 @@ const words = [headingWithoutLastWord, lastWord]
 	}
 </style>
 
-<section id={id} class:list={['heading-callout', classString]}>
+<section
+	id={id}
+	class:list={['heading-callout', classString]}
+	data-motion='down'
+	data-motion-stagger={`#${id} .content, #${id} .fade, #${id} .arrow`}
+>
 	<div class='content'>
-		<h2 class='drop-shadow' data-motion='right'>
+		<h2 class='drop-shadow'>
 			{words.map((word) => <span class='word'>{word}</span>)}
 		</h2>
 		<p data-motion='fade'>
 			{text}
 		</p>
 	</div>
-	<Icon class='arrow' name='arrow-down' data-motion='fade' />
+	<a class='arrow' href={arrowHref}>
+		<Icon
+			class='arrow'
+			name='arrow-down'
+			data-motion='fade'
+			title='Skip to next section'
+			aria-label='Skip to next section'
+		/>
+	</a>
 </section>
