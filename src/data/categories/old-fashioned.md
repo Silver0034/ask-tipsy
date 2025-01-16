@@ -1,4 +1,5 @@
 ---
+slug: 'old-fashioned'
 title: 'Old Fashioned Variants'
 icon: 'fa-regular fa-glass-whiskey'
 featured: false

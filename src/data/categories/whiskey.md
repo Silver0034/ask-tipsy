@@ -1,4 +1,5 @@
 ---
+slug: 'whiskey'
 title: 'Whiskey'
 icon: 'fa-regular fa-glass-whiskey-rocks'
 featured: true
@@ -21,9 +22,9 @@ Whiskey cocktails are incredibly versatile, making them suitable for any occasio
 
 ## Tipsy’s Tips for Perfect Whiskey Cocktails
 
--   **Choose Your Whiskey Wisely**: Experiment with different types of whiskey to discover your favorite flavors and styles.
--   **Balance is Key**: Whether you're mixing a classic cocktail or creating your own signature drink, strive for balance between the sweetness, acidity, and complexity of the ingredients.
--   **Don't Forget the Garnish**: A well-chosen garnish can enhance the aroma and flavor of your whiskey cocktail. Experiment with citrus twists, cherry garnishes, or even a touch of aromatic bitters to add depth and complexity to your drink.
+- **Choose Your Whiskey Wisely**: Experiment with different types of whiskey to discover your favorite flavors and styles.
+- **Balance is Key**: Whether you're mixing a classic cocktail or creating your own signature drink, strive for balance between the sweetness, acidity, and complexity of the ingredients.
+- **Don't Forget the Garnish**: A well-chosen garnish can enhance the aroma and flavor of your whiskey cocktail. Experiment with citrus twists, cherry garnishes, or even a touch of aromatic bitters to add depth and complexity to your drink.
 
 ## Explore Our Collection
 

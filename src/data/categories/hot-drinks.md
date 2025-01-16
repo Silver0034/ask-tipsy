@@ -1,4 +1,5 @@
 ---
+slug: 'hot-drinks'
 title: 'Hot Drinks'
 icon: 'fa-regular fa-mug-hot'
 featured: false
@@ -21,9 +22,9 @@ From cozy evenings at home to festive holiday celebrations, hot drinks are versa
 
 ## Tipsy’s Tips for Perfect Hot Drinks
 
--   **High-Quality Ingredients**: The key to a great hot drink is using the best ingredients. Fresh spices, high-quality teas, and premium spirits can make all the difference.
--   **Proper Heating**: Heat your drinks gently to bring out the best flavors. Avoid boiling, as this can sometimes alter the taste and reduce the quality of the ingredients.
--   **Garnish with Care**: A touch of garnish can elevate your hot drink to the next level. Think cinnamon sticks, citrus peels, or a dollop of whipped cream for that perfect finishing touch.
+- **High-Quality Ingredients**: The key to a great hot drink is using the best ingredients. Fresh spices, high-quality teas, and premium spirits can make all the difference.
+- **Proper Heating**: Heat your drinks gently to bring out the best flavors. Avoid boiling, as this can sometimes alter the taste and reduce the quality of the ingredients.
+- **Garnish with Care**: A touch of garnish can elevate your hot drink to the next level. Think cinnamon sticks, citrus peels, or a dollop of whipped cream for that perfect finishing touch.
 
 ## Cozy Up with These Ideas
 

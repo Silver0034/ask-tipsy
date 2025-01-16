@@ -1,0 +1,131 @@
+---
+import { getCollection } from 'astro:content'
+import RecipeCard from '@components/RecipeCard.astro'
+import type { CollectionEntry } from 'astro:content'
+
+const recipesMaxCount = 8 // should probably be an even number
+
+const { class: classes, id, title, filterTag } = Astro.props
+
+if (!filterTag) {
+	throw new Error('filterTag is required for RecipeCardSlider')
+}
+
+const recipes = (await getCollection('recipes', ({ data }) => {
+	return data.tags.includes(filterTag)
+})) as CollectionEntry<'recipes'>[]
+
+const totalRecipeCount = recipes.length
+
+if (!recipes.length) {
+	throw new Error(`No recipes found for tag "${filterTag}"`)
+}
+
+if (recipes.length > recipesMaxCount) recipes.length = recipesMaxCount
+
+const randomIDForSkipLink = Math.random().toString(36).substring(2, 15)
+---
+
+<style lang='scss'>
+	@use '@styles/breakpoints' as *;
+
+	.recipe-cards {
+		grid-column: 2 / -2;
+	}
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		grid-column: 2 / -2;
+		margin-block-end: 1em;
+	}
+
+	.recipes {
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+	}
+
+	@include breakpoint('mobile', 'tablet') {
+		.recipe-cards {
+			grid-column: 1 / -1;
+		}
+
+		.top {
+			margin-inline: var(--gutter-min);
+		}
+
+		.recipes {
+			position: relative;
+			display: grid;
+			grid-auto-flow: column;
+			gap: 1rem;
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			white-space: nowrap;
+			padding-block-end: 1em;
+			grid-column: 1 / -1;
+			padding-inline-start: var(--gutter-min);
+			scroll-snap-type: x mandatory;
+			scroll-padding: var(--gutter-min);
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 0.5em;
+				height: 100%;
+			}
+
+			&::before {
+				left: 0;
+				// linear gradient, left white to right transparent
+				background: linear-gradient(
+					to right,
+					rgba(255, 255, 255, 1) 0%,
+					rgba(255, 255, 255, 0) 100%
+				);
+			}
+
+			&::after {
+				right: 0;
+			}
+		}
+	}
+</style>
+
+<section id={id} class:list={['recipe-cards', classes]}>
+	<a href=`#${randomIDForSkipLink}` class='skip-link'>Skip {title}</a>
+	<slot name='top'>
+		<div
+			class='top'
+			data-motion='up-right'
+			data-motion-stagger={`#${id} .stagger`}
+		>
+			<slot name='title'>
+				<h2 class='stagger'>{title}</h2>
+			</slot>
+			<slot name='links'>
+				{
+					totalRecipeCount > recipesMaxCount && (
+						<a
+							href={`/tags/${filterTag}/`}
+							class='view-all stagger'
+						>
+							View all
+						</a>
+					)
+				}
+			</slot>
+		</div>
+	</slot>
+	<div
+		class='recipes'
+		data-motion='up'
+		data-motion-stagger={`#${id} .recipe-card`}
+	>
+		{recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+	</div>
+	<span id={randomIDForSkipLink}></span>
+</section>

@@ -86,7 +86,7 @@ main {
 
 main > section {
 	grid-column: 2 / -2;
-	margin-block: var(--gap);
+	margin-block: 0;
 	padding-block: var(--gap);
 
 	&:first-of-type {
@@ -152,4 +152,9 @@ body * {
 		background: colors.get('foreground', 'accent');
 		border-radius: 10px;
 	}
+}
+
+html,
+* {
+	scroll-behavior: smooth;
 }

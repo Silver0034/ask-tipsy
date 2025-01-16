@@ -1,4 +1,5 @@
 ---
+slug: 'summer'
 title: 'Summertime Drinks'
 icon: 'fa-regular fa-sun'
 featured: true
@@ -21,9 +22,9 @@ Summertime drinks are incredibly versatile, making them suitable for any summer 
 
 ## Tipsy’s Tips for Perfect Summertime Drinks
 
--   **Embrace Fresh Ingredients**: Take advantage of the abundance of fresh fruits and herbs available during the summer months to create vibrant and flavorful cocktails.
--   **Keep it Light and Refreshing**: Opt for light spirits and plenty of ice to keep your drinks cool and refreshing on hot summer days.
--   **Add a Touch of Tropical Flair**: Garnish your summertime drinks with colorful fruit slices, umbrellas, and other tropical accents to enhance the summery vibe.
+- **Embrace Fresh Ingredients**: Take advantage of the abundance of fresh fruits and herbs available during the summer months to create vibrant and flavorful cocktails.
+- **Keep it Light and Refreshing**: Opt for light spirits and plenty of ice to keep your drinks cool and refreshing on hot summer days.
+- **Add a Touch of Tropical Flair**: Garnish your summertime drinks with colorful fruit slices, umbrellas, and other tropical accents to enhance the summery vibe.
 
 ## Dive into the World of Summertime Drinks
 

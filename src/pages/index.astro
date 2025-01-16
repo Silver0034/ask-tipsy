@@ -4,7 +4,7 @@ import Layout from '@layouts/LayoutPage.astro'
 import HeadingCallouts from '@components/HeadingCallouts.astro'
 import Hero from '@components/Hero.astro'
 import RecipeCTARepeater from '@components/RecipeCTARepeater.astro'
-import RecipeCardSlider from '@components/RecipeCardSlider.astro'
+import RecipeCards from '@components/RecipeCards.astro'
 import { getEntry } from 'astro:content'
 
 const featuredRecipe = await getEntry('recipes', 'cosmopolitan')
@@ -46,7 +46,10 @@ const tabTitle = 'Explore',
 		id='intro'
 		heading="Hi, I'm Tipsy"
 		text='What would you like to enjoy today?'
+		arrowHref='#new'
 	/>
 
-	<RecipeCardSlider id='new' title='New Recipes' filterTag='new' />
+	<RecipeCards id='new' title='New Recipes' filterTag='new' />
+
+	<RecipeCards id='classic' title='Classic Cocktails' filterTag='classic' />
 </Layout>

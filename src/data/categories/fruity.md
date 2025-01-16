@@ -1,4 +1,5 @@
 ---
+slug: 'fruity'
 title: 'Fruity Cocktails'
 icon: 'fa-regular fa-lemon'
 featured: true
@@ -21,9 +22,9 @@ Fruity cocktails are incredibly versatile, making them suitable for any occasion
 
 ## Tipsy’s Tips for Perfect Fruity Cocktails
 
--   **Use Fresh Ingredients**: Opt for fresh fruits and juices whenever possible to enhance the flavor and aroma of your cocktails.
--   **Balance Your Flavors**: Pay attention to the balance of sweet and tart flavors in your cocktails to achieve a harmonious blend that's not overly cloying.
--   **Experiment with Combinations**: Get creative with your fruity cocktails by experimenting with different fruit combinations and garnishes to create unique and exciting flavor profiles.
+- **Use Fresh Ingredients**: Opt for fresh fruits and juices whenever possible to enhance the flavor and aroma of your cocktails.
+- **Balance Your Flavors**: Pay attention to the balance of sweet and tart flavors in your cocktails to achieve a harmonious blend that's not overly cloying.
+- **Experiment with Combinations**: Get creative with your fruity cocktails by experimenting with different fruit combinations and garnishes to create unique and exciting flavor profiles.
 
 ## Dive into the World of Fruity Cocktails
 

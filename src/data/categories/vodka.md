@@ -1,4 +1,5 @@
 ---
+slug: 'vodka'
 title: 'Vodka Cocktails'
 icon: 'fa-regular fa-martini-glass'
 featured: false
@@ -21,9 +22,9 @@ Whether you're hosting a chic cocktail party, enjoying a casual brunch, or simpl
 
 ## Tipsy’s Tips for Perfect Vodka Cocktails
 
--   **Choose Quality Vodka**: Opt for a high-quality vodka with a smooth finish to ensure the best base for your cocktails.
--   **Experiment with Mixers**: Vodka pairs well with a variety of mixers, from fruity juices and sodas to bold flavors like ginger beer and coffee liqueur.
--   **Garnish Creatively**: Elevate your vodka cocktails with stylish garnishes such as citrus twists, fresh herbs, and even edible flowers for a touch of elegance.
+- **Choose Quality Vodka**: Opt for a high-quality vodka with a smooth finish to ensure the best base for your cocktails.
+- **Experiment with Mixers**: Vodka pairs well with a variety of mixers, from fruity juices and sodas to bold flavors like ginger beer and coffee liqueur.
+- **Garnish Creatively**: Elevate your vodka cocktails with stylish garnishes such as citrus twists, fresh herbs, and even edible flowers for a touch of elegance.
 
 ## Dive into the World of Vodka Cocktails
 

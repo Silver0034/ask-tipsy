@@ -1,4 +1,5 @@
 ---
+slug: 'punches'
 title: 'Punches'
 icon: 'fa-regular fa-glass-whiskey'
 featured: false
@@ -21,9 +22,9 @@ Punches are incredibly versatile, making them suitable for any occasion. Whether
 
 ## Tipsy’s Tips for Perfect Punches
 
--   **Balance Flavors**: Aim for a harmonious balance of sweet, sour, and bitter flavors in your punch. Taste as you go and adjust the ingredients accordingly.
--   **Keep it Chill**: Serve your punch over plenty of ice to keep it cold and refreshing throughout the event.
--   **Garnish with Style**: Elevate the presentation of your punch with colorful fruit slices, fresh herbs, or edible flowers for a festive touch.
+- **Balance Flavors**: Aim for a harmonious balance of sweet, sour, and bitter flavors in your punch. Taste as you go and adjust the ingredients accordingly.
+- **Keep it Chill**: Serve your punch over plenty of ice to keep it cold and refreshing throughout the event.
+- **Garnish with Style**: Elevate the presentation of your punch with colorful fruit slices, fresh herbs, or edible flowers for a festive touch.
 
 ## Dive into the World of Punches
 
