@@ -1,28 +1,17 @@
 @use 'reset';
 @use 'breakpoints' as *;
-@use 'colors';
 @use 'fonts';
 @use '../../public/styles/font-fallbacks.css';
-@use 'palettes';
+@use 'colors';
 @use 'skip_links';
 
-@include palettes.create(#9b1a50, #7e400e);
 :root {
-	@each $type, $states in colors.$semantic-colors-light {
-		@each $state, $color in $states {
-			--color-#{$type}-#{$state}: #{$color};
-		}
-	}
+	--primary-color: #9b1a50;
+	--accent-color: #7e400e;
 }
-.dark {
-	color: colors.get('foreground', 'default');
 
-	@each $type, $states in colors.$semantic-colors-dark {
-		@each $state, $color in $states {
-			--color-#{$type}-#{$state}: #{$color};
-		}
-	}
-}
+@include colors.create(var(--primary-color), var(--accent-color));
+@include colors.semantic();
 
 :root {
 	@include fonts.body;

@@ -1,106 +1,361 @@
+@use 'sass:math';
 @use 'sass:map';
+@use 'sass:list';
+@use 'sass:color';
 
-$semantic-colors-light: (
+$_mode_stop: 60; // The lightness to switch between a light and dark foreground
+$_invert_colors: var(--invert-colors, 1); // -1 = dark mode, 1 = light mode
+$_infinity: 999999;
+$_lightness_max: 98;
+$_lightness_min: 10;
+$_color_stops: 9; // Number of divisions for each color palette
+$_red_hues: clamp(20, h, 40);
+$_green_hues: clamp(120, h, 180);
+$_blue_hues: clamp(190, h, 250);
+$_yellow_hues: clamp(90, h, 100);
+
+$_create_default_args: (
+	'blue_hues': $_blue_hues,
+	'green_hues': $_green_hues,
+	'lightness_max': $_lightness_max,
+	'lightness_min': $_lightness_min,
+	'red_hues': $_red_hues,
+	'stops': $_color_stops,
+	'yellow_hues': $_yellow_hues,
+	'extra_colors': ()
+);
+
+$_semantic_colors: (
 	'foreground': (
-		'default': var(--palette-primary-900),
-		'accent': var(--palette-accent-400),
-		'active': var(--palette-primary-400),
-		'muted': var(--palette-neutral-600),
-		'overlay': var(--palette-neutral-300),
-		'danger': var(--palette-danger-600),
-		'success': var(--palette-success-600),
-		'warning': var(--palette-warning-600),
-		'info': var(--palette-info-600)
+		'default': (
+			'light': var(--palette-primary-900),
+			'dark': var(--palette-primary-100)
+		),
+		'accent': (
+			'light': var(--palette-accent-400),
+			'dark': var(--palette-accent-100)
+		),
+		'active': (
+			'light': var(--palette-primary-400),
+			'dark': var(--palette-primary-100)
+		),
+		'muted': (
+			'light': var(--palette-neutral-600),
+			'dark': var(--palette-neutral-400)
+		),
+		'neutral': (
+			'light': var(--palette-neutral-400),
+			'dark': var(--palette-neutral-100)
+		),
+		'overlay': (
+			'light': var(--palette-neutral-300),
+			'dark': var(--palette-neutral-700)
+		),
+		'danger': (
+			'light': var(--palette-danger-600),
+			'dark': var(--palette-danger-400)
+		),
+		'success': (
+			'light': var(--palette-success-600),
+			'dark': var(--palette-success-400)
+		),
+		'warning': (
+			'light': var(--palette-warning-600),
+			'dark': var(--palette-warning-400)
+		),
+		'info': (
+			'light': var(--palette-info-600),
+			'dark': var(--palette-info-400)
+		)
 	),
 	'background': (
-		'default': var(--palette-neutral-100),
-		'accent': var(--palette-accent-100),
-		'active': var(--palette-neutral-400),
-		'muted': var(--palette-neutral-200),
-		'overlay': var(--palette-neutral-900),
-		'danger': var(--palette-danger-100),
-		'success': var(--palette-success-100),
-		'warning': var(--palette-warning-100),
-		'info': var(--palette-info-100)
+		'default': (
+			'light': var(--palette-neutral-100),
+			'dark': var(--palette-neutral-900)
+		),
+		'accent': (
+			'light': var(--palette-accent-100),
+			'dark': var(--palette-accent-700)
+		),
+		'active': (
+			'light': var(--palette-neutral-400),
+			'dark': var(--palette-neutral-700)
+		),
+		'muted': (
+			'light': var(--palette-neutral-200),
+			'dark': var(--palette-neutral-800)
+		),
+		'neutral': (
+			'light': var(--palette-neutral-100),
+			'dark': var(--palette-neutral-700)
+		),
+		'overlay': (
+			'light': var(--palette-neutral-900),
+			'dark': var(--palette-neutral-100)
+		),
+		'danger': (
+			'light': var(--palette-danger-100),
+			'dark': var(--palette-danger-900)
+		),
+		'success': (
+			'light': var(--palette-success-100),
+			'dark': var(--palette-success-900)
+		),
+		'warning': (
+			'light': var(--palette-warning-100),
+			'dark': var(--palette-warning-900)
+		),
+		'info': (
+			'light': var(--palette-info-100),
+			'dark': var(--palette-info-900)
+		)
 	),
 	'border': (
-		'default': var(--palette-primary-700),
-		'accent': var(--palette-accent-600),
-		'active': var(--palette-primary-400),
-		'muted': var(--palette-neutral-400),
-		'overlay': var(--palette-neutral-200),
-		'danger': var(--palette-danger-800),
-		'success': var(--palette-success-800),
-		'warning': var(--palette-warning-800),
-		'info': var(--palette-info-800)
+		'default': (
+			'light': var(--palette-primary-700),
+			'dark': var(--palette-primary-300)
+		),
+		'accent': (
+			'light': var(--palette-accent-600),
+			'dark': var(--palette-accent-400)
+		),
+		'active': (
+			'light': var(--palette-primary-400),
+			'dark': var(--palette-accent-100)
+		),
+		'muted': (
+			'light': var(--palette-neutral-400),
+			'dark': var(--palette-neutral-600)
+		),
+		'neutral': (
+			'light': var(--palette-neutral-600),
+			'dark': var(--palette-neutral-400)
+		),
+		'overlay': (
+			'light': var(--palette-neutral-200),
+			'dark': var(--palette-neutral-800)
+		),
+		'danger': (
+			'light': var(--palette-danger-800),
+			'dark': var(--palette-danger-200)
+		),
+		'success': (
+			'light': var(--palette-success-800),
+			'dark': var(--palette-success-200)
+		),
+		'warning': (
+			'light': var(--palette-warning-800),
+			'dark': var(--palette-warning-200)
+		),
+		'info': (
+			'light': var(--palette-info-800),
+			'dark': var(--palette-info-200)
+		)
 	),
 	'interaction': (
-		'default': var(--palette-accent-400),
-		'accent': var(--palette-accent-400),
-		'active': var(--palette-accent-300),
-		'muted': var(--palette-primary-200),
-		'overlay': var(--palette-accent-300),
-		'danger': var(--palette-danger-400),
-		'success': var(--palette-success-400),
-		'warning': var(--palette-warning-400),
-		'info': var(--palette-info-400)
+		'default': (
+			'light': var(--palette-accent-400),
+			'dark': var(--palette-accent-600)
+		),
+		'accent': (
+			'light': var(--palette-accent-400),
+			'dark': var(--palette-accent-600)
+		),
+		'active': (
+			'light': var(--palette-accent-300),
+			'dark': var(--palette-accent-700)
+		),
+		'muted': (
+			'light': var(--palette-primary-200),
+			'dark': var(--palette-primary-800)
+		),
+		'neutral': (
+			'light': var(--palette-neutral-400),
+			'dark': var(--palette-neutral-600)
+		),
+		'overlay': (
+			'light': var(--palette-accent-300),
+			'dark': var(--palette-accent-700)
+		),
+		'danger': (
+			'light': var(--palette-danger-400),
+			'dark': var(--palette-danger-600)
+		),
+		'success': (
+			'light': var(--palette-success-400),
+			'dark': var(--palette-success-600)
+		),
+		'warning': (
+			'light': var(--palette-warning-400),
+			'dark': var(--palette-warning-600)
+		),
+		'info': (
+			'light': var(--palette-info-400),
+			'dark': var(--palette-info-600)
+		)
 	)
 );
 
-$semantic-colors-dark: (
-	'foreground': (
-		'default': var(--palette-neutral-100),
-		'accent': var(--palette-accent-100),
-		'active': var(--palette-neutral-100),
-		'muted': var(--palette-neutral-400),
-		'overlay': var(--palette-neutral-700),
-		'danger': var(--palette-danger-400),
-		'success': var(--palette-success-400),
-		'warning': var(--palette-warning-400),
-		'info': var(--palette-info-400)
-	),
-	'background': (
-		'default': var(--palette-neutral-900),
-		'accent': var(--palette-accent-700),
-		'active': var(--palette-neutral-700),
-		'muted': var(--palette-neutral-800),
-		'overlay': var(--palette-neutral-100),
-		'danger': var(--palette-danger-900),
-		'success': var(--palette-success-900),
-		'warning': var(--palette-warning-900),
-		'info': var(--palette-info-900)
-	),
-	'border': (
-		'default': var(--palette-primary-300),
-		'accent': var(--palette-accent-400),
-		'active': var(--palette-accent-100),
-		'muted': var(--palette-neutral-600),
-		'overlay': var(--palette-neutral-800),
-		'danger': var(--palette-danger-200),
-		'success': var(--palette-success-200),
-		'warning': var(--palette-warning-200),
-		'info': var(--palette-info-200)
-	),
-	'interaction': (
-		'default': var(--palette-accent-600),
-		'accent': var(--palette-accent-600),
-		'active': var(--palette-accent-700),
-		'muted': var(--palette-primary-800),
-		'overlay': var(--palette-accent-700),
-		'danger': var(--palette-danger-600),
-		'success': var(--palette-success-600),
-		'warning': var(--palette-warning-600),
-		'info': var(--palette-info-600)
-	)
-);
+@function _create_neutral_colors(
+	$max: $_lightness_max,
+	$min: $_lightness_min,
+	$stops: $_color_stops
+) {
+	$colors: ();
+
+	$lightness_decrement: math.div($max - $min, $stops);
+
+	@for $i from 1 through $stops {
+		$lightness: math.round($max - ($lightness_decrement * $i));
+
+		// Ensure lightness is a number between 0 and 1
+		$lightness: math.div($lightness, 100);
+
+		$colors: list.append($colors, oklch($lightness 0 0));
+	}
+
+	@return $colors;
+}
+
+@function _create_palette_from_color(
+	$color,
+	$neutrals,
+	$hue: h,
+	$chroma: c,
+	$alpha: alpha
+) {
+	$colors: ();
+
+	@each $neutral in $neutrals {
+		$lightness: color.channel($neutral, 'lightness');
+		$colors: list.append(
+			$colors,
+			oklch(from $color $lightness $chroma $hue / $alpha)
+		);
+	}
+
+	@return $colors;
+}
+
+@function _get_hue_limit(
+	$color_name,
+	$position: 'start',
+	$hue_limits: $_hue_limits
+) {
+	@if ($position not in ('start', 'end')) {
+		@error 'Invalid position: #{$position}. Must be either "start" or "end".';
+	}
+
+	$key: if($position == 'start', 1, 2);
+
+	$limits: map.get($hue_limits, $color_name);
+	@return list.nth($limits, $key);
+}
+
+@mixin _add_color_vars_for_palette($name, $colors) {
+	$index: 1;
+	@each $color in $colors {
+		--palette-#{$name}-#{$index * 100}: #{$color};
+		$index: $index + 1;
+	}
+}
+
+@mixin create($primary, $accent, $args: $_create_default_args) {
+	// Fill in args with default values if they are not provided
+	$args: map.merge($_create_default_args, $args);
+
+	$colors: ();
+
+	// destructure the arguments
+	$blue_hues: map.get($args, 'blue_hues');
+	$green_hues: map.get($args, 'green_hues');
+	$lightness_max: map.get($args, 'lightness_max');
+	$lightness_min: map.get($args, 'lightness_min');
+	$red_hues: map.get($args, 'red_hues');
+	$stops: map.get($args, 'stops');
+	$yellow_hues: map.get($args, 'yellow_hues');
+	$extra_colors: map.get($args, 'extra_colors');
+
+	// if extra colors has a value (but isn't name: color) return an error
+	@if $extra_colors != () and not all(map.keys($extra_colors), string) {
+		@error 'Extra colors must be a map of name: color pairs.';
+	}
+
+	$neutrals: _create_neutral_colors($lightness_max, $lightness_min, $stops);
+
+	$colors: (
+		'primary': _create_palette_from_color($primary, $neutrals),
+		'accent': _create_palette_from_color($accent, $neutrals),
+		'danger': _create_palette_from_color($primary, $neutrals, $red_hues),
+		'success': _create_palette_from_color($primary, $neutrals, $green_hues),
+		'warning': _create_palette_from_color($primary, $neutrals, $yellow_hues),
+		'info': _create_palette_from_color($primary, $neutrals, $blue_hues)
+	);
+
+	// Add extra colors to the colors map
+	@each $name, $color in $extra_colors {
+		$colors: map.merge(
+			$colors,
+			(
+				$name: _create_palette_from_color($color, $neutrals)
+			)
+		);
+	}
+
+	:root {
+		@include _add_color_vars_for_palette('neutral', $neutrals);
+		@each $name, $color in $colors {
+			@include _add_color_vars_for_palette($name, $color);
+		}
+	}
+}
+
+@mixin semantic_no_selectors($color_mode: 'light', $args: $_semantic_colors) {
+	// Merge the default semantic colors with the user-defined colors
+	$colors: map.merge($_semantic_colors, $args);
+
+	@if $color_mode != 'light' and $color_mode != 'dark' {
+		@error "Color mode must be either 'light' or 'dark'.";
+	}
+
+	@each $type, $states in $colors {
+		@each $state, $color_modes in $states {
+			$color: map.get($color_modes, $color_mode);
+			@if $state == 'default' {
+				--color-#{$type}: #{$color};
+			} @else {
+				--color-#{$type}-#{$state}: #{$color};
+			}
+		}
+	}
+}
+
+@mixin semantic($args: $_semantic_colors) {
+	// Merge the default semantic colors with the user-defined colors
+	$colors: map.merge($_semantic_colors, $args);
+
+	// add light colors
+	:root,
+	.light {
+		@include semantic_no_selectors('light', $args);
+	}
+
+	.dark {
+		@include semantic_no_selectors('dark', $args);
+	}
+}
 
 @function get($type, $state: 'default') {
 	// return an error if the type or state is not found
-	@if not map.has-key($semantic-colors-light, $type) {
+	@if not map.has-key($_semantic_colors, $type) {
 		@error 'Semantic color type `#{$type}` not found.';
 	}
-	@if not map.has-key(map.get($semantic-colors-light, $type), $state) {
+	@if not map.has-key(map.get($_semantic_colors, $type), $state) {
 		@error 'Semantic color state `#{$state}` not found for type `#{$type}`.';
+	}
+
+	@if $state == 'default' {
+		@return #{var(--color-#{$type})};
 	}
 
 	@return #{var(--color-#{$type}-#{$state})};
