@@ -3,10 +3,7 @@
 @use 'sass:list';
 @use 'sass:color';
 
-$_mode_stop: 60; // The lightness to switch between a light and dark foreground
-$_invert_colors: var(--invert-colors, 1); // -1 = dark mode, 1 = light mode
-$_infinity: 999999;
-$_lightness_max: 98;
+$_lightness_max: 99.999;
 $_lightness_min: 10;
 $_color_stops: 9; // Number of divisions for each color palette
 $_red_hues: clamp(20, h, 40);
@@ -14,7 +11,7 @@ $_green_hues: clamp(120, h, 180);
 $_blue_hues: clamp(190, h, 250);
 $_yellow_hues: clamp(90, h, 100);
 
-$_create_default_args: (
+$_default_args_for_create: (
 	'blue_hues': $_blue_hues,
 	'green_hues': $_green_hues,
 	'lightness_max': $_lightness_max,
@@ -29,7 +26,7 @@ $_semantic_colors: (
 	'foreground': (
 		'default': (
 			'light': var(--palette-primary-900),
-			'dark': var(--palette-primary-100)
+			'dark': var(--palette-neutral-100)
 		),
 		'accent': (
 			'light': var(--palette-accent-400),
@@ -37,7 +34,7 @@ $_semantic_colors: (
 		),
 		'active': (
 			'light': var(--palette-primary-400),
-			'dark': var(--palette-primary-100)
+			'dark': var(--palette-neutral-100)
 		),
 		'muted': (
 			'light': var(--palette-neutral-600),
@@ -71,7 +68,7 @@ $_semantic_colors: (
 	'background': (
 		'default': (
 			'light': var(--palette-neutral-100),
-			'dark': var(--palette-neutral-900)
+			'dark': var(--palette-primary-900)
 		),
 		'accent': (
 			'light': var(--palette-accent-100),
@@ -206,7 +203,7 @@ $_semantic_colors: (
 	$lightness_decrement: math.div($max - $min, $stops);
 
 	@for $i from 1 through $stops {
-		$lightness: math.round($max - ($lightness_decrement * $i));
+		$lightness: $max - ($lightness_decrement * $i);
 
 		// Ensure lightness is a number between 0 and 1
 		$lightness: math.div($lightness, 100);
@@ -260,9 +257,9 @@ $_semantic_colors: (
 	}
 }
 
-@mixin create($primary, $accent, $args: $_create_default_args) {
+@mixin create($primary, $accent, $args: $_default_args_for_create) {
 	// Fill in args with default values if they are not provided
-	$args: map.merge($_create_default_args, $args);
+	$args: map.merge($_default_args_for_create, $args);
 
 	$colors: ();
 
@@ -347,10 +344,10 @@ $_semantic_colors: (
 
 @function get($type, $state: 'default') {
 	// return an error if the type or state is not found
-	@if not map.has-key($_semantic_colors, $type) {
+	@if not map.has-key($semantic-colors, $type) {
 		@error 'Semantic color type `#{$type}` not found.';
 	}
-	@if not map.has-key(map.get($_semantic_colors, $type), $state) {
+	@if not map.has-key(map.get($semantic-colors, $type), $state) {
 		@error 'Semantic color state `#{$state}` not found for type `#{$type}`.';
 	}
 
